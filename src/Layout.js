@@ -30,6 +30,8 @@ export default function Layout({ children, title, description, type, price, keyw
         <meta name="twitter:image" content={"https://azurequarks.blob.core.windows.net/negocios/bannertalleresquarks.png"} />
         <meta name="url" content={`https://quarks.com.co`} />
         <meta property="url" content={`https://quarks.com.co`} />
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
       </Head>
 
       <main ><Navbar2 />{children}</main>

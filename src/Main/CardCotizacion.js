@@ -9,7 +9,6 @@ import { useEffect, useState } from 'react';
 export default function CardCotizacion({ cotizacion, data2, data3 }) {
   const router = useRouter()
   const handleSeeCotizaciones = () => {
-
     router.push({
       pathname: '/cotizacion',
       query: { cotizacion: `${cotizacion.titulo.replace(/ /g, '-')}-${cotizacion.id}` },
