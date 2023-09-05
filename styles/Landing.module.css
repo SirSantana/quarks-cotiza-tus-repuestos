@@ -166,10 +166,30 @@
   gap: 16px;
   transition: 0.3s;
   padding-bottom: 16px;
+  /* animation: pulseBorder 4s linear infinite;  */
+
 }
 .cardCotizacionVendedor:hover{
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+@keyframes pulseBorder {
+  0% {
+    border-color: #007bff;
+  }
+  25% {
+    border-color: #f50057;
+  }
+  50% {
+    border-color: #28a745;
+  }
+  75% {
+    border-color: #ffc107;
+  }
+  100% {
+    border-color: #007bff;
+  }
+}
+
 .containerChildDos {
   display: flex;
   flex-direction: column;

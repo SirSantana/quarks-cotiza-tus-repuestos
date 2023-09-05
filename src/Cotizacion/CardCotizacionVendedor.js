@@ -1,11 +1,20 @@
 import { timeSince } from "@/utils/dateEs";
 import styles from '@/styles/Landing.module.css'
 import PriceFormat from "@/utils/priceFormat";
+import { useRouter } from "next/router";
 
 
 
-export default function CardCotizacionVendedor({ cotizacion }) {
+export default function CardCotizacionVendedor({ cotizacion, pregunta }) {
+  const router = useRouter()
   const precio = PriceFormat({price:cotizacion?.precio})
+  const urlPregunta = `https://www.quarks.com.co${router.asPath}`
+  
+  const sendMessage = () => {
+    let url = `https://api.whatsapp.com/send?phone=57${cotizacion?.celular}`;
+    url += `&text=${encodeURI(`😁 Hola, quiero saber si tienen disponibilidad de la cotizacion N°${cotizacion.id} \n ✍️ Descripcion: ${pregunta} \n 📌 Link de la pregunta: ${urlPregunta}`)}&app_absent=0`
+    window.open(url);
+  }
   return (
     <div className={styles.cardCotizacionVendedor} >
       <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between',}}>
@@ -26,6 +35,9 @@ export default function CardCotizacionVendedor({ cotizacion }) {
           <p style={{ fontSize: '14px', fontWeight:'500' }}>{cotizacion.estado}</p>
         </div>
       </div>
+      <button onMouseDown={(e)=> e.preventDefault()} onClick={sendMessage} style={{marginTop:'8px', borderRadius:'4px', cursor:'pointer'}} className={styles.button}>
+        Estoy interesado
+      </button>
     </div>
   )
 }
