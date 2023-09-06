@@ -12,25 +12,8 @@ import FormCotizar from './FormCotizarVendedor'
 export default function ModalOneCotizacion({ data, cotizaciones }) {
   const router = useRouter()
   const { user } = useAuth()
-  const [anchoPantalla, setAnchoPantalla] = useState();
   const [visibleCotizar, setVisibleCotizar] = useState(false)
 
-  let ancho = anchoPantalla >1080 ? 30: 140
-  let padding = cotizaciones.length * ancho
-  useEffect(() => {
-    // Función para actualizar el ancho de la pantalla cuando cambie el tamaño de la ventana
-    function actualizarAnchoPantalla() {
-      setAnchoPantalla(window.innerWidth);
-    }
-
-    // Agregar un event listener para escuchar cambios en el tamaño de la ventana
-    window.addEventListener('resize', actualizarAnchoPantalla);
-
-    // Eliminar el event listener cuando el componente se desmonte
-    return () => {
-      window.removeEventListener('resize', actualizarAnchoPantalla);
-    };
-  }, [])
   return (
     <div className={styles.modalBackdrop} >
       <div className={styles.modalCoti}>
@@ -50,6 +33,14 @@ export default function ModalOneCotizacion({ data, cotizaciones }) {
           <ion-icon onClick={() => router.push('/cotizaciones')} style={{ fontSize: '24px', cursor: 'pointer' }} name="close-outline"></ion-icon>
           
         </div>
+        {cotizaciones.length<=0&& 
+        <div onClick={() => router.push('/cotizaciones')} className={styles.cardCotizacionVendedor}>
+          <ion-icon style={{ fontSize: '24px'}} name="alert-circle"></ion-icon>
+          <p style={{ fontSize: '14px' }}>Aún no hay cotizaciones, vuelve pronto</p>
+          </div>
+        }
+        {data?.imagen && <img alt={data?.titulo} src={data?.imagen} style={{ width: '100%', objectFit: 'contain', height: 'auto',  maxHeight: '400px', margin: '8px 0' }} />}
+        
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', justifyContent: 'space-between', height: '100%', width: '100%', marginTop: '16px' }}>
           <p style={{ fontSize: '14px' }}>{data?.titulo}</p>
         </div>
@@ -58,13 +49,13 @@ export default function ModalOneCotizacion({ data, cotizaciones }) {
         {cotizaciones &&
           <div className={styles.gridCardCotizaciones}>
             {cotizaciones.map(el => (
-              <CardCotizacionVendedor cotizacion={el} pregunta={data?.titulo} />
+              <CardCotizacionVendedor cotizacion={el} pregunta={data?.titulo} emailVendedor={user?.email} />
             ))}
-
           </div>
         }
+        
         {visibleCotizar &&
-          <FormCotizar setVisibleCotizar={setVisibleCotizar} celular={data?.celular}/>
+          <FormCotizar setVisibleCotizar={setVisibleCotizar} celular={data?.celular}emailVendedor={user?.email} dataPregunta={data} cotizaciones={cotizaciones}/>
         }
 
       </div>

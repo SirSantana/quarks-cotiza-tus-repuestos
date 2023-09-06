@@ -17,7 +17,7 @@ const initialForm = {
   celular: '',
   estado: 'Nuevo'
 }
-export default function FormCotizar({ setVisibleCotizar, celular, emailVendedor }) {
+export default function FormCotizar({ setVisibleCotizar, celular, emailVendedor, dataPregunta, cotizaciones }) {
   const [form, setForm] = useState(initialForm)
   const [colorBack, setColorBack] = useState('#80FF1C')
   const { user } = useAuth()
@@ -25,9 +25,9 @@ export default function FormCotizar({ setVisibleCotizar, celular, emailVendedor 
   const [createCotizacion, { data, loading, error }] = useMutation(CREATE_COTIZACION)
   const [visibleCotizado, setVisibleCotizado] = useState(false)
 
- const {cotizacion} = router?.query
- const partes = cotizacion?.split("-")
- const id = partes?.[partes?.length - 1]
+  const { cotizacion } = router?.query
+  const partes = cotizacion?.split("-")
+  const id = partes?.[partes?.length - 1]
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -42,9 +42,30 @@ export default function FormCotizar({ setVisibleCotizar, celular, emailVendedor 
     }
   }
   const handleSendMessage = () => {
-    let link = `https://www.cotizatusrepuestos.com${asPath}`
+    const nombreCliente = "Hola, Buen Dia!";
+    const marcaModeloAuto = `${dataPregunta?.marca} ${dataPregunta?.referencia}`;
+    const nombreRepuesto = dataPregunta?.titulo;
+    let marcaA = "";
+    let precioMarcaA = "";
+    let marcaB = "";
+    let precioMarcaB = "";
+    cotizaciones.forEach((cotizacion, index) => {
+      // Aquí asumimos que cada cotización tiene las propiedades: marca y precio
+      const { marca, precio } = cotizacion;
+      // Asignar los valores a las variables según el índice
+      if (index === 0) {
+        marcaA = marca;
+        precioMarcaA = precio;
+      } else if (index === 1) {
+        marcaB = marca;
+        precioMarcaB = precio;
+      }
+    });
+    const mensajeWhatsApp = `${nombreCliente} 😊\n\nEs un placer informarte que tenemos el repuesto que necesitas para tu ${marcaModeloAuto}. Aquí están los detalles:\n\nRepuesto: ${nombreRepuesto} 🚗\n\nOpción 1 (Marca A):\nMarca: ${marcaA} 🏷️\nPrecio: ${precioMarcaA}\n\nOpción 2 (Marca B):\nMarca: ${marcaB} 🏷️\nPrecio: ${precioMarcaB}\n\nSi estás listo para proceder con la compra, simplemente responde a este mensaje con 'Confirmar'. Te proporcionaremos los pasos para finalizar la orden y enviarte el repuesto.\n\nSi tienes alguna pregunta adicional o necesitas más información sobre las opciones disponibles, no dudes en preguntar. Estamos aquí para ayudarte en cada paso del proceso. 🤝\n\n¡Gracias por elegirnos y confiar en nuestros servicios! 🙌\n\nSaludos, Miguel de Cotizatusrepuestos.com🚀\n`;
+
+    let link = `https://www.cotizatusrepuestos.com${router?.asPath}`
     let url = `https://api.whatsapp.com/send?phone=57${celular}`;
-    url += `&text=${encodeURI(`😁 Hola, ya tienes cotizacion(es) para el repuesto de tú vehículo! \n🚘 Cotización N° ${id} \n✍️ Para ver la cotización en la pagina ve al siguiente link. ` + link)}&app_absent=0`
+    url += `&text=${encodeURI(mensajeWhatsApp + link)}&app_absent=0`
     window.open(url);
   }
   const handleSubmit = (e) => {
@@ -57,7 +78,7 @@ export default function FormCotizar({ setVisibleCotizar, celular, emailVendedor 
     alert('No eres vendedor')
   }
   useEffect(() => {
-    setForm({ ...form, pregunta:id, })
+    setForm({ ...form, pregunta: id, })
   }, [id])
   useEffect(() => {
     if (data) {
@@ -71,7 +92,7 @@ export default function FormCotizar({ setVisibleCotizar, celular, emailVendedor 
   return (
     <div className={styles.modal} >
       <div style={{ width: '300px', backgroundColor: 'white', padding: '16px', borderRadius: '8px' }} className={styles.modalContent}>
-      <ion-icon onClick={() => setVisibleCotizar(false)} style={{ fontSize: '24px', cursor: 'pointer' }} name="close-outline"></ion-icon>
+        <ion-icon onClick={() => setVisibleCotizar(false)} style={{ fontSize: '24px', cursor: 'pointer' }} name="close-outline"></ion-icon>
 
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', marginTop: '8px', gap: '10px' }}>
 

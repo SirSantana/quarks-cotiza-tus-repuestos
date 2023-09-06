@@ -3,11 +3,13 @@ import { GET_COTIZACIONES, GET_ONE_PREGUNTA, GET_PREV_PREGUNTAS } from "@/graphq
 import Layout from "@/src/Layout";
 import CardCotizacion from "@/src/Main/CardCotizacion";
 import styles from '@/styles/Landing.module.css'
+import { useRouter } from "next/router";
 
 
 export default function OneCotizacion({data, data2, data3}){
+  const router = useRouter()  
     return(
-      <Layout title={'Cotizacion'} >
+      <Layout title={ `${data2?.getOnePregunta?.titulo} ${data2?.getOnePregunta?.marca} `}url={router?.asPath} description={`${data2?.getOnePregunta?.titulo} ${data2?.getOnePregunta?.marca} `} >
       <section  className={styles.containerGridTalleres}>
         <h2 className={styles.title2} style={{ textAlign: 'center', margin: '124px 0 64px 0' }}>
           Otras personas han cotizado recientemente

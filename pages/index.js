@@ -15,12 +15,12 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Cotiza los repuestos para tu carro</title>
+        <title>Cotiza los repuestos Chevrolet para tu carro</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/Logo1.png" />
-        <meta property="og:title" content={'Repuestos de carro'} key="title" />
-        <meta property='og:description' content={'Cotiza tus autopartes para tu vehiculo'} />
+        <meta property="og:title" content={'Cotiza los repuestos Chevrolet para tu carro'} key="title" />
+        <meta property='og:description' content={description} />
         <meta property='og:site_name' content='Cotiza tus repuestos' />
         <meta property='og:url' content='https://www.cotizatusrepuestos.com' />
 
@@ -37,7 +37,7 @@ export default function Home() {
         <meta name="twitter:site" content="@quarks-automotriz" />
         <meta name="twitter:creator" content="@quarks-automotriz" />
         <meta name="twitter:title" content={"Cotiza los repuestos de tu carro "} />
-        <meta name="twitter:image" content={"https://azurequarks.blob.core.windows.net/negocios/bannertalleresquarks.png"} />
+        <meta name="twitter:image" content={"https://azurequarks.blob.core.windows.net/negocios/cotizatusrepuestos.png"} />
         <meta name="url" content={`https://www.cotizatusrepuestos.com`} />
         <meta property="url" content={`https://www.cotizatusrepuestos.com`} />
         <meta name="google-site-verification" content="F-SVvzOscK_a9cq8mam6fewNIYr3oIMzwT610ZQReu0" />

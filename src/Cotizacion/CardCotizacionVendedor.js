@@ -6,10 +6,10 @@ import useAuth from "@/hooks/useAuth";
 
 
 
-export default function CardCotizacionVendedor({ cotizacion, pregunta }) {
+export default function CardCotizacionVendedor({ cotizacion, pregunta, emailVendedor }) {
   const router = useRouter()
   const precio = PriceFormat({ price: cotizacion?.precio })
-  const urlPregunta = `https://www.quarks.com.co${router.asPath}`
+  const urlPregunta = `https://www.cotizatusrepuestos.com${router.asPath}`
 
   const sendMessage = () => {
     let url = `https://api.whatsapp.com/send?phone=57${cotizacion?.celular}`;
@@ -36,11 +36,10 @@ export default function CardCotizacionVendedor({ cotizacion, pregunta }) {
           <p style={{ fontSize: '14px', fontWeight: '500' }}>{cotizacion.estado}</p>
         </div>
       </div>
-      <button  onClick={sendMessage} style={{ marginTop: '8px', borderRadius: '4px', cursor: 'pointer' }} className={styles.button}>
+      <button onClick={sendMessage} style={{ marginTop: '8px', borderRadius: '4px', cursor: 'pointer' }} className={styles.button}>
         Estoy interesado
         <ion-icon style={{ fontSize: '16px' }} name="logo-whatsapp"></ion-icon>
       </button>
-     
     </div>
   )
 }

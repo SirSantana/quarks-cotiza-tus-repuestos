@@ -3,12 +3,14 @@ import { GET_ONE_PREGUNTA, GET_PREV_PREGUNTAS } from "@/graphql/queries";
 import Layout from "@/src/Layout";
 import CardCotizacion from "@/src/Main/CardCotizacion";
 import styles from '@/styles/Landing.module.css'
+import { useRouter } from "next/router";
 
 
 export default function Cotizaciones({ data, }) {
+  const router = useRouter()
 
   return (
-    <Layout title={'Cotizacion'} >
+    <Layout title={'Cotizaciones recientes de repuestos de carros Colombia'} url={router?.asPath} description={'Cotizaciones de repuestos de carros en Colombia'} >
       <section  className={styles.containerGridTalleres}>
         <h2 className={styles.title2} style={{ textAlign: 'center', margin: '124px 0 64px 0' }}>
           Otras personas han cotizado recientemente
