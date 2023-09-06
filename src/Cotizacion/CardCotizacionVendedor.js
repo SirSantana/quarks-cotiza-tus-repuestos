@@ -2,6 +2,7 @@ import { timeSince } from "@/utils/dateEs";
 import styles from '@/styles/Landing.module.css'
 import PriceFormat from "@/utils/priceFormat";
 import { useRouter } from "next/router";
+import useAuth from "@/hooks/useAuth";
 
 
 
@@ -35,10 +36,11 @@ export default function CardCotizacionVendedor({ cotizacion, pregunta }) {
           <p style={{ fontSize: '14px', fontWeight: '500' }}>{cotizacion.estado}</p>
         </div>
       </div>
-      <button onMouseDown={(e) => e.preventDefault()} onClick={sendMessage} style={{ marginTop: '8px', borderRadius: '4px', cursor: 'pointer' }} className={styles.button}>
+      <button  onClick={sendMessage} style={{ marginTop: '8px', borderRadius: '4px', cursor: 'pointer' }} className={styles.button}>
         Estoy interesado
         <ion-icon style={{ fontSize: '16px' }} name="logo-whatsapp"></ion-icon>
       </button>
+     
     </div>
   )
 }

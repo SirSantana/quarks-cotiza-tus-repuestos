@@ -36,7 +36,7 @@ export default function Navbar2() {
           </Link>
 
           <ul className={styles.navv}>
-            <li style={{ listStyle: 'none', cursor: 'pointer', textDecoration: 'none', color: router?.pathname === '/servicios-automotriz/Taller mecanico-Bogota, Colombia' ? '#373737' : '#373737' }} className={styles.subtitle}>Cotizaciones</li>
+            <li style={{ listStyle: 'none', cursor: 'pointer', textDecoration: 'none', color: router?.pathname === '/cotizaciones' ? '#373737' : '#373737' }} className={styles.subtitle}>Cotizaciones</li>
           </ul>
         </div>
       </div>

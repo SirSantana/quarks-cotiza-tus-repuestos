@@ -21,8 +21,8 @@ export default function Home() {
         <link rel="icon" href="/Logo1.png" />
         <meta property="og:title" content={'Repuestos de carro'} key="title" />
         <meta property='og:description' content={'Cotiza tus autopartes para tu vehiculo'} />
-        <meta property='og:site_name' content='Quarks' />
-        <meta property='og:url' content='https://quarks.com.co' />
+        <meta property='og:site_name' content='Cotiza tus repuestos' />
+        <meta property='og:url' content='https://www.cotizatusrepuestos.com' />
 
 
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -38,9 +38,9 @@ export default function Home() {
         <meta name="twitter:creator" content="@quarks-automotriz" />
         <meta name="twitter:title" content={"Cotiza los repuestos de tu carro "} />
         <meta name="twitter:image" content={"https://azurequarks.blob.core.windows.net/negocios/bannertalleresquarks.png"} />
-        <meta name="url" content={`https://quarks.com.co`} />
-        <meta property="url" content={`https://quarks.com.co`} />
-
+        <meta name="url" content={`https://www.cotizatusrepuestos.com`} />
+        <meta property="url" content={`https://www.cotizatusrepuestos.com`} />
+        <meta name="google-site-verification" content="F-SVvzOscK_a9cq8mam6fewNIYr3oIMzwT610ZQReu0" />
 
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
