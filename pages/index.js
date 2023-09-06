@@ -41,7 +41,8 @@ export default function Home() {
         <meta name="url" content={`https://www.cotizatusrepuestos.com`} />
         <meta property="url" content={`https://www.cotizatusrepuestos.com`} />
         <meta name="google-site-verification" content="F-SVvzOscK_a9cq8mam6fewNIYr3oIMzwT610ZQReu0" />
-
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1233996863721897"
+          crossorigin="anonymous"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         {/* <meta property="twitter:description" content={'Cotiza los repuestos de tu carro facil y rapido'} />
@@ -61,16 +62,16 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Navbar />
-        <FormCotizar/>
+        <FormCotizar />
         <ListMarcasComercializadas />
-        <PrevCotizaciones/>
+        <PrevCotizaciones />
 
-        <PasosCotizacion/>
-        <SectionPasos/>
+        <PasosCotizacion />
+        <SectionPasos />
         {/* <PasosCotizacion />
         <Beneficios />
         <Footer /> */}
-        <Footer/>
+        <Footer />
       </main>
     </>
   )

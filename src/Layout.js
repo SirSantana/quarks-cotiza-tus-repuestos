@@ -43,7 +43,8 @@ export default function Layout({ children, title, description, type, price, keyw
         <meta property="og:image:width" content='200' />
         <meta property="og:image:height" content='200' />
         <meta property="og:image:type" content='image/png' />
-
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1233996863721897"
+     crossorigin="anonymous"></script>
         <meta name="google-site-verification" content="F-SVvzOscK_a9cq8mam6fewNIYr3oIMzwT610ZQReu0" />
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
