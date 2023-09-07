@@ -1,10 +1,7 @@
 import styles from '@/styles/Landing.module.css'
 import { timeSince } from '@/utils/dateEs';
-import { useQuery } from '@apollo/client';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import ModalOneCotizacion from '../Cotizacion/ModalOneCotizacion';
-import { useEffect, useState } from 'react';
 
 export default function CardCotizacion({ cotizacion, data2, data3 }) {
   const router = useRouter()

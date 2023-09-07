@@ -19,9 +19,9 @@ export default function ModalOneCotizacion({ data, cotizaciones }) {
       <div className={styles.modalCoti}>
         <div style={{ display: 'flex', flexDirection: 'row', width: '100%', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', flexDirection: 'row', gap: '16px', alignItems: 'center', }}>
-            <img src={`${data?.marca}.png`} style={{ height: '32px', width: '32px' }} />
+            <img src={`${data?.marca}.png`} style={{ height: '32px', width: '32px' }} alt='Repuestos chevrolet bogota' />
             <div>
-              <h4 style={{ fontSize: '16px', fontWeight: '600' }}>{data?.referencia}</h4>
+              <h2 style={{ fontSize: '16px', fontWeight: '600' }}>{data?.referencia}</h2>
               <p style={{ fontSize: '12px', color: '#5C5C5C' }}>hace {timeSince(data?.fecha)}</p>
             </div>
             
@@ -42,7 +42,7 @@ export default function ModalOneCotizacion({ data, cotizaciones }) {
         {data?.imagen && <img alt={data?.titulo} src={data?.imagen} style={{ width: '100%', objectFit: 'contain', height: 'auto',  maxHeight: '400px', margin: '8px 0' }} />}
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', justifyContent: 'space-between', height: '100%', width: '100%', marginTop: '16px' }}>
-          <p style={{ fontSize: '14px' }}>{data?.titulo}</p>
+          <h1 style={{ fontSize: '14px', fontWeight:'400'}}>{data?.titulo}</h1>
         </div>
 
 

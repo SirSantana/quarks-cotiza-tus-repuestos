@@ -8,8 +8,13 @@ import { useRouter } from "next/router";
 
 export default function OneCotizacion({data, data2, data3}){
   const router = useRouter()  
+  let titlePrecio = `- $${data3?.getCotizaciones?.[0]?.precio}`
+  let titleWithoutPrecio = data2?.getOnePregunta?.titulo +" "+ data2?.getOnePregunta?.marca + " | " + "Cotiza tus repuestos Chevrolet"
+
+  let descriptionWith= `${data2?.getOnePregunta?.titulo} ${titlePrecio}, Marca: ${data3?.getCotizaciones?.[0]?.marca}, PAGO CONTRAENTREGA y ENVIO GRATIS en Bogotá. ${data3?.getCotizaciones?.[0]?.garantia} mes(es) de garantia. Cotiza tus repuestos chevrolet aqui!`
+  let descriptionWithout = `${data2?.getOnePregunta?.titulo}  Cotiza tus repuestos chevrolet aqui!`
     return(
-      <Layout title={ `${data2?.getOnePregunta?.titulo} ${data2?.getOnePregunta?.marca} `}url={router?.asPath} description={`${data2?.getOnePregunta?.titulo} ${data2?.getOnePregunta?.marca} `} >
+      <Layout title={titleWithoutPrecio}url={router?.asPath} description={data3?.getCotizaciones?.[0]?.marca?descriptionWith:descriptionWithout} price={data3?.getCotizaciones?.[0]?.precio} marca={data3?.getCotizaciones?.[0]?.marca} fecha={data2?.getOnePregunta?.fecha} image={data2?.getOnePregunta?.imagen}>
       <section  className={styles.containerGridTalleres}>
         <h2 className={styles.title2} style={{ textAlign: 'center', margin: '124px 0 64px 0' }}>
           Otras personas han cotizado recientemente

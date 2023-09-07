@@ -8,6 +8,7 @@ import PasosCotizacion from '@/src/Main/PasosDeCotizacion'
 import Footer from '@/src/Main/Footer'
 import SectionPasos from '@/src/Main/Section4'
 import PrevCotizaciones from '@/src/Main/PrevCotizaciones'
+import CallToActionFooter from '@/src/Main/CallToActionFooter'
 
 
 export default function Home() {
@@ -68,6 +69,7 @@ export default function Home() {
 
         <PasosCotizacion />
         <SectionPasos />
+        <CallToActionFooter/>
         {/* <PasosCotizacion />
         <Beneficios />
         <Footer /> */}
