@@ -6,7 +6,7 @@ export default function PasosCotizacion() {
   return (
     <div className={styles.container}>
       <div className={styles.divTitle}>
-        <h1 className={styles.title1}>¿Cómo cotizo mis repuestos?  </h1>
+        <h2 className={styles.title1}>¿Cómo cotizo mis autopartes chevrolet?  </h2>
       </div>
       <div className={styles.containerPasos1}>
         <div className={styles.containerPasos2}>
@@ -26,7 +26,7 @@ export default function PasosCotizacion() {
           <div className={styles.divTitle}>
             <h2 className={styles.title}>Revisa tu cotización</h2>
           </div>
-          <h4 className={styles.subtitle}>Te enviaremos un mensaje por Whatsapp con el link de la cotizacion para que revises las cotizaciones de los vendedores.
+          <h4 className={styles.subtitle}>Te enviaremos un mensaje por Whatsapp con los detalles de la cotizacion (precio, marca, garantia) junto con el link de la cotizacion.
           </h4>
         </div>
         <div className={styles.containerPasos2}>
@@ -36,7 +36,7 @@ export default function PasosCotizacion() {
           <div className={styles.divTitle}>
             <h2 className={styles.title}>Confirma disponibilidad</h2>
           </div>
-          <h4 className={styles.subtitle}>En la cotización encontrarás el precio, marca u origen, garantía y la fecha. Contacta con los vendedores y listo!
+          <h4 className={styles.subtitle}>En la cotización encontrarás el precio, marca u origen, garantía y la fecha. Y listo!
           </h4>
         </div>
       </div>

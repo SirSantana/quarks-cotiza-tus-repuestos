@@ -5,6 +5,7 @@ import { CREATE_COTIZACION } from '@/graphql/mutations'
 import { useMutation } from '@apollo/client'
 import useAuth from '@/hooks/useAuth'
 import { ModalError, ModalLoading, ModalSuccessfull } from '@/utils/Modales'
+import { GET_COTIZACIONES } from '@/graphql/queries'
 
 const initialForm = {
   garantia: '1',
@@ -22,12 +23,14 @@ export default function FormCotizar({ setVisibleCotizar, celular, emailVendedor,
   const [colorBack, setColorBack] = useState('#80FF1C')
   const { user } = useAuth()
   const router = useRouter()
-  const [createCotizacion, { data, loading, error }] = useMutation(CREATE_COTIZACION)
-  const [visibleCotizado, setVisibleCotizado] = useState(false)
-
   const { cotizacion } = router?.query
   const partes = cotizacion?.split("-")
   const id = partes?.[partes?.length - 1]
+  const [createCotizacion, { data, loading, error }] = useMutation(CREATE_COTIZACION,{ refetchQueries: [{ query: GET_COTIZACIONES, variables: { id: id } }] })
+  
+  const [visibleCotizado, setVisibleCotizado] = useState(false)
+
+ 
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
