@@ -12,9 +12,9 @@ export default function Cotizaciones({ data, }) {
   return (
     <Layout title={'Cotizaciones recientes de repuestos de carros Colombia'} url={router?.asPath} description={'Cotizaciones de repuestos de carros en Colombia'} >
       <section  className={styles.containerGridTalleres}>
-        <h2 className={styles.title2} style={{ textAlign: 'center', margin: '124px 0 64px 0' }}>
+        <h1 className={styles.title2} style={{ textAlign: 'center', margin: '124px 0 64px 0' }}>
           Cotizaciones recientes de autopartes chevrolet
-        </h2>
+        </h1>
         <div className={styles.gridCardTalleres}>
           {data?.getPreguntas?.map(el => (
             <CardCotizacion cotizacion={el} />

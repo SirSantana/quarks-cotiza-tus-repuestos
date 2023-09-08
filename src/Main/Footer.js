@@ -13,6 +13,8 @@ export default function Footer() {
         <div className={styles.containerFooter2}>
           <div className={styles.containerText}>
             <h4 className={styles.title2}>Talleres mecanicos</h4>
+            <Link style={{ textDecoration: 'none' }} href={'https://www.quarks.com.co'} ><p className={styles.subtitle}>Buscas un taller para tu auto en Bogota?</p></Link>
+
           </div>
           <div className={styles.containerText}>
             <h4 className={styles.title2}>Acerca de Nosotros</h4>

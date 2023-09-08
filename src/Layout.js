@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Navbar2 from './Navbar/Navbar2'
+import Footer from './Main/Footer'
 
 export default function Layout({ children, title, description, type, price, keywords, image, tags, url, marca, fecha }) {
   return (
@@ -56,7 +57,8 @@ export default function Layout({ children, title, description, type, price, keyw
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
       </Head>
 
-      <main ><Navbar2 />{children}</main>
+        
+      <main ><Navbar2 />{children}<Footer /></main>
 
     </>
   )
