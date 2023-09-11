@@ -12,7 +12,7 @@ import CallToActionFooter from '@/src/Main/CallToActionFooter'
 
 
 export default function Home() {
-  let description = 'Repuestos automotores para tu carro en colombia, encuentra los repuestos para tu vehiculo, cotiza con decenas de vendedores tus partes.Repuestos de carros en bogota.Repuestos para chevrolet en bogota. Repuestos para carros en colombia Cotiza ya!'
+  let description = '¡Encuentra los repuestos Chevrolet que necesitas en Colombia! Cotiza tus piezas y accesorios para vehículos Chevrolet de manera rápida, segura y sencilla Obtén las mejores ofertas en repuestos originales y homologaso con envios gratis y pago contraentrega para tu Chevrolet. Simplifica tu búsqueda y ahorra tiempo y dinero. ¡Cotiza hoy mismo en línea!'
   return (
     <>
       <Head>
