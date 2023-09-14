@@ -38,7 +38,6 @@ export default function CardCotizacionVendedor({ cotizacion, pregunta, emailVend
       </div>
       <button onClick={sendMessage} style={{ marginTop: '8px', borderRadius: '4px', cursor: 'pointer' }} className={styles.button}>
         Estoy interesado
-        <ion-icon style={{ fontSize: '16px' }} name="logo-whatsapp"></ion-icon>
       </button>
     </div>
   )
