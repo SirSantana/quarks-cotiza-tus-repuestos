@@ -3,13 +3,13 @@ import Navbar2 from './Navbar/Navbar2'
 import Footer from './Main/Footer'
 
 export default function Layout({ children, title, description, type, price, keywords, image, tags, url, marca, fecha }) {
+  console.log(image);
   return (
     <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/Logo1.png" />
         <meta property="og:title" content={title} key="title" />
         <meta property='og:description' content={description} />
         <meta property='og:site_name' content='Cotiza tus repuestos' />
@@ -49,6 +49,7 @@ export default function Layout({ children, title, description, type, price, keyw
         <meta property="og:image:height" content='200' />
         <meta property="og:image:type" content='image/png' />
         {fecha && <meta property='date' content={fecha} />}
+        <link rel="icon" href={image? image:"/Logo1.png"} />
 
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1233996863721897"
           crossorigin="anonymous"></script>

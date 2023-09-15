@@ -24,6 +24,10 @@ export default function CardCotizacionVendedor({ cotizacion, pregunta, emailVend
       </div>
       <div style={{ marginTop: '8px', display: 'flex', gap: '8px', flexDirection: 'column' }}>
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+          <p style={{ fontSize: '14px', color: '#929090' }}>Detalle</p>
+          <p style={{ fontSize: '14px', fontWeight: '500' }}>{cotizacion.descripcion}</p>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
           <p style={{ fontSize: '14px', color: '#929090' }}>Garantía</p>
           <p style={{ fontSize: '14px', fontWeight: '500' }}>{cotizacion.garantia} mes(es)</p>
         </div>
@@ -35,6 +39,9 @@ export default function CardCotizacionVendedor({ cotizacion, pregunta, emailVend
           <p style={{ fontSize: '14px', color: '#929090' }}>Estado</p>
           <p style={{ fontSize: '14px', fontWeight: '500' }}>{cotizacion.estado}</p>
         </div>
+        {cotizacion?.imagen && <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+          <img src={cotizacion?.imagen} style={{ height: '100%', width: '100%', maxHeight: '350px', maxWidth: '300px' }} alt={pregunta} />
+        </div>}
       </div>
       <button onClick={sendMessage} style={{ marginTop: '8px', borderRadius: '4px', cursor: 'pointer' }} className={styles.button}>
         Estoy interesado

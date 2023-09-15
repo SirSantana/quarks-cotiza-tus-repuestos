@@ -13,7 +13,6 @@ export default function ModalOneCotizacion({ data, cotizaciones }) {
   const router = useRouter()
   const { user } = useAuth()
   const [visibleCotizar, setVisibleCotizar] = useState(false)
-
   return (
     <div className={styles.modalBackdrop} >
       <div className={styles.modalCoti}>

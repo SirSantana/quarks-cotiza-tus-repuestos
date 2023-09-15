@@ -73,6 +73,7 @@ query getCotizaciones($id:ID) {
    envio
    estado
    fecha
+   imagen
   }
 }
 `

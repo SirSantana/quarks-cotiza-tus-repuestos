@@ -13,8 +13,9 @@ export default function OneCotizacion({data, data2, data3}){
 
   let descriptionWith= `${data2?.getOnePregunta?.titulo} ${titlePrecio}, Marca: ${data3?.getCotizaciones?.[0]?.marca}, PAGO CONTRAENTREGA y ENVIO GRATIS en Bogotá. ${data3?.getCotizaciones?.[0]?.garantia} mes(es) de garantia. Cotiza tus repuestos chevrolet aqui!`
   let descriptionWithout = `${data2?.getOnePregunta?.titulo}  Cotiza tus repuestos chevrolet aqui!`
+  console.log(data3?.getCotizaciones[0]?.imagen);
     return(
-      <Layout title={titleWithoutPrecio}url={router?.asPath} description={data3?.getCotizaciones?.[0]?.marca?descriptionWith:descriptionWithout} price={data3?.getCotizaciones?.[0]?.precio} marca={data3?.getCotizaciones?.[0]?.marca} fecha={data2?.getOnePregunta?.fecha} image={data2?.getOnePregunta?.imagen}>
+      <Layout title={titleWithoutPrecio}url={router?.asPath} description={data3?.getCotizaciones?.[0]?.marca?descriptionWith:descriptionWithout} price={data3?.getCotizaciones?.[0]?.precio} marca={data3?.getCotizaciones?.[0]?.marca} fecha={data2?.getOnePregunta?.fecha} image={data2?.getOnePregunta?.imagen|| data3?.getCotizaciones[0]?.imagen}>
       <section  className={styles.containerGridTalleres}>
         <h2 className={styles.title2} style={{ textAlign: 'center', margin: '124px 0 64px 0' }}>
           Otras personas han cotizado recientemente
