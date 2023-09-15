@@ -107,7 +107,7 @@ export default function FormCotizar() {
           <label htmlFor='celular' className={styles.label}>Tu celular</label>
           <input required id='celular' className={styles.input} type='number' onChange={handleChange} name='celular' placeholder='3214560210' value={form.celular} />
         </div>
-        {/* <div className={styles.locationImg}>
+        <div className={styles.locationImg}>
           <input id='image' style={{ display: 'none', height: 0, }} onChange={onSelectFile} type='file' accept="image/png, image/gif, image/jpeg" />
           <label className={styles.labelImage} htmlFor='image'>
             {selectedFile ?
@@ -118,7 +118,7 @@ export default function FormCotizar() {
               : <img src='/image.svg' style={{ width: '25px', height: '25px', cursor: 'pointer' }} />}
 
           </label>
-        </div> */}
+        </div>
         {/* <input type={'submit'} className={styles.button} value='Wha' onClick={sendMessage} /> */}
 
         <input type={'submit'} className={styles.button} value='Cotizar' />

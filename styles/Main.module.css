@@ -60,13 +60,20 @@
   font-weight: 400;
   font-size: 16px;
   width: 100%;
+  -webkit-appearance: textfield; /* Para Safari */
+  appearance: textfield;
 }
 
 .input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
   -webkit-text-fill-color: #1b333d;
 }
-
+.input::-webkit-inner-spin-button,
+.input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
 .button {
   background-color: #f50057;
   border: none;
