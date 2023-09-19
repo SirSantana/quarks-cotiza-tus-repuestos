@@ -23,20 +23,21 @@ export default function CardCotizacionVendedor({ cotizacion, pregunta, emailVend
         <p style={{ fontSize: '10px' }}>hace {timeSince(cotizacion.fecha)}</p>
       </div>
       <div style={{ marginTop: '8px', display: 'flex', gap: '8px', flexDirection: 'column' }}>
+        {cotizacion?.descripcion &&
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+            <h4 style={{ fontSize: '14px', color: '#929090' }}>Detalle</h4>
+            <p style={{ fontSize: '14px', fontWeight: '500' }}>{cotizacion.descripcion}</p>
+          </div>}
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-          <p style={{ fontSize: '14px', color: '#929090' }}>Detalle</p>
-          <p style={{ fontSize: '14px', fontWeight: '500' }}>{cotizacion.descripcion}</p>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-          <p style={{ fontSize: '14px', color: '#929090' }}>Garantía</p>
+          <h4 style={{ fontSize: '14px', color: '#929090' }}>Garantía</h4>
           <p style={{ fontSize: '14px', fontWeight: '500' }}>{cotizacion.garantia} mes(es)</p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-          <p style={{ fontSize: '14px', color: '#929090' }}>Marca / Origen</p>
+          <h4 style={{ fontSize: '14px', color: '#929090' }}>Marca / Origen</h4>
           <p style={{ fontSize: '14px', fontWeight: '500' }}>{cotizacion.marca}</p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-          <p style={{ fontSize: '14px', color: '#929090' }}>Estado</p>
+          <h4 style={{ fontSize: '14px', color: '#929090' }}>Estado</h4>
           <p style={{ fontSize: '14px', fontWeight: '500' }}>{cotizacion.estado}</p>
         </div>
         {cotizacion?.imagen && <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
