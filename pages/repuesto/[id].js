@@ -43,7 +43,7 @@ export default function Repuesto({ data }) {
 
         <div className={styles.containerCardRepuesto}>
           <div className={styles.containerImgRepuestos}>
-            <img src={data?.imagen} className={styles.imgPrincipalRepuesto} />
+            <img src={data?.imagen} className={styles.imgPrincipalRepuesto} alt={data?.repuesto} />
             <div style={{ width: '100%', margin: '16px 0', backgroundColor: '#d9d9d9', height: '1px' }} />
 
             <div className={styles.repSugeridos}  >
