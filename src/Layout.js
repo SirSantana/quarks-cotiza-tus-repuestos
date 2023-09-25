@@ -7,8 +7,10 @@ function generarMarcadoEstructurado(producto) {
     return {
       "@context": "http://schema.org",
       "@type": "Product",
+      "url": producto.url,
       "name": producto.repuesto,
       "description": producto.descripcion,
+      "image": producto.image,
       "offers": {
         "@type": "Offer",
         "price": producto.precio,
