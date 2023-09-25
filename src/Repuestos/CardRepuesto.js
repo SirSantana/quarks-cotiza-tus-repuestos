@@ -8,7 +8,7 @@ export default function CardRepuesto({ repuesto }) {
   console.log(textRepuesto);
   return (
     <Link href={`/repuesto/${repuesto?.repuesto.replace(/ /g, "-").replace(/\//g, "-")}-${repuesto.idUrl}`} style={{textDecoration:'none'}} className={styles.cardRepuesto}>
-      <img src={repuesto?.imagen} style={{ width: '100%', height: '70%', objectFit: 'contain', maxHeight:'220px', marginBottom:'8px' }} />
+      <img src={repuesto?.imagen} className={styles.imgRepuestoCard}  />
       <h2 className={styles.titleRepuesto}>{repuesto.repuesto}</h2>
       <div className={styles.containerFooterCard}>
         <p className={styles.textPrice}>${repuesto.precio}</p>

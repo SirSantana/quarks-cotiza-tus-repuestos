@@ -383,7 +383,8 @@
     }
 
     .navDiv {
-        width: 95%;
+        width: 90%;
+        padding: 8px 0px;
     }
 
     .containerNav {
