@@ -2,8 +2,24 @@ import Head from 'next/head'
 import Navbar2 from './Navbar/Navbar2'
 import Footer from './Main/Footer'
 
-export default function Layout({ children, title, description, type, price, keywords, image, tags, url, marca, fecha }) {
-  console.log(image);
+function generarMarcadoEstructurado(producto) {
+  if(producto){
+    return {
+      "@context": "http://schema.org",
+      "@type": "Product",
+      "name": producto.repuesto,
+      "description": producto.descripcion,
+      "offers": {
+        "@type": "Offer",
+        "price": producto.precio,
+        "priceCurrency": "COP", // Cambia esto según tu moneda
+        "availability": producto.stock > 0 ? "http://schema.org/InStock" : "http://schema.org/OutOfStock"
+      }
+    }
+  }
+}
+export default function Layout({ children, title, description, type, price, keywords, image, tags, url, marca, fecha, productoMarcado }) {
+  const marcadoEstructurado = generarMarcadoEstructurado(productoMarcado);
   return (
     <>
       <Head>
@@ -56,6 +72,12 @@ export default function Layout({ children, title, description, type, price, keyw
         <meta name="google-site-verification" content="F-SVvzOscK_a9cq8mam6fewNIYr3oIMzwT610ZQReu0" />
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+       {productoMarcado && 
+        <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(marcadoEstructurado) }}
+      />}
       </Head>
 
         

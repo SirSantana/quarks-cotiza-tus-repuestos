@@ -7,7 +7,12 @@ import { useRouter } from "next/router";
 
 export default function Repuesto({ data }) {
   const router = useRouter()
-  let description = `${data?.repuesto}, Precio: ${data?.precio}, Marca: ${data?.fabricante}, PAGO CONTRAENTREGA y ENVIO GRATIS en Bogotá. ${data?.garantiaMeses} mes(es) de garantia. Cotiza tus repuestos chevrolet aqui!`
+
+  let precio = Number(data.precio);
+  let descuento = Number(data.descuento);
+
+  let precioConDescuento = precio - (precio * descuento / 100);
+  let description = `${data?.repuesto}, Precio: $${precioConDescuento.toFixed(3)}, Marca: ${data?.fabricante}, PAGO CONTRAENTREGA y ENVIO GRATIS en Bogotá. ${data?.garantiaMeses} mes(es) de garantia. Cotiza tus repuestos chevrolet aqui!`
   
   const urlPregunta = `https://www.cotizatusrepuestos.com${router.asPath}`
   const sendMessage = () => {
@@ -21,8 +26,15 @@ export default function Repuesto({ data }) {
     url += `&text=${encodeURI(`👋 Buen dia, estoy buscando el siguiente repuesto:`)}&app_absent=0`
     window.open(url);
   }
+  let productoMarcado = {
+    repuesto:data?.repuesto,
+    descripcion:description,
+    precio:data?.precio,
+    stock:data?.stock
+  }
+  
   return (
-    <Layout title={data?.repuesto + " " + data?.fabricante} marca={data?.fabricante} description={description} price={data?.precio} image={data?.imagen} url={router?.asPath}>
+    <Layout title={data?.repuesto + " " + data?.fabricante} marca={data?.fabricante} description={description} price={precioConDescuento.toFixed(3)} image={data?.imagen} url={router?.asPath} productoMarcado={productoMarcado}>
 
       <div className={styles.container2}>
         <p onClick={() => router?.back()} className={styles.textReturn} > Regresar | Repuestos &gt; {data?.marcaAuto} &gt; {data?.tipo} &gt; {data?.repuestoTipo} </p>
@@ -45,7 +57,8 @@ export default function Repuesto({ data }) {
           <div className={styles.cardDetalleRepuesto}>
             <p style={{ fontSize: '12px', color: '#5C5C5C', margin: 0 }}>Nuevo | 2 Vendidos</p>
             <h1 className={styles.titleNombre}>{data?.repuesto}</h1>
-            <h2 className={styles.textPricePrincipal}>${data?.precio}</h2>
+            <p style={{fontSize:'16px', textDecoration:'line-through'}}>${data?.precio}</p>
+            <h2 style={{alignItems:'center', display:'flex'}} className={styles.textPricePrincipal}>${precioConDescuento?.toFixed(3)}{data?.descuento > 0 && <b style={{ fontSize: '14px', color: 'green', fontWeight: '500', marginLeft: '8px' }}>{data?.descuento}% OFF</b>}</h2>
             <img src={data?.imagen} className={styles.imgPrincipalRepuestoMobile} />
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '24px' }}>

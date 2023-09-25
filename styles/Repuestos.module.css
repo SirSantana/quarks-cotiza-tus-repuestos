@@ -226,7 +226,10 @@
 }
 }
 @media(max-width:900px){
-  
+  .containerFooterCard{
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .containerCardRepuesto{
     flex-direction: column;
   }
@@ -266,10 +269,6 @@
   .subtitle2 {
     font-size: 14px;
     text-align: center;
-  }
-  .containerFooterCard{
-    flex-direction: column;
-    align-items: flex-start;
   }
   .container {
     width: 95%;
