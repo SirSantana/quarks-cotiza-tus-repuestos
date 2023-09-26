@@ -13,7 +13,7 @@ function generarMarcadoEstructurado(producto) {
       "image": producto.image,
       "offers": {
         "@type": "Offer",
-        "price": producto.precio,
+        "price": producto.precio.replace(/\./g, ''),
         "priceCurrency": "COP", // Cambia esto según tu moneda
         "availability": producto.stock > 0 ? "http://schema.org/InStock" : "http://schema.org/OutOfStock"
       }

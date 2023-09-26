@@ -14,7 +14,10 @@ export default function CardRepuesto({ repuesto }) {
       <img src={repuesto?.imagen} className={styles.imgRepuestoCard} />
       <h2 className={styles.titleRepuesto}>{repuesto.repuesto}</h2>
       <div className={styles.containerFooterCard}>
-        <p className={styles.textPrice}>${precioConDescuento?.toFixed(3)}{repuesto?.descuento > 0 && <b style={{ fontSize: '14px', color: 'green', fontWeight: '500', marginLeft: '8px' }}>{repuesto?.descuento}% OFF</b>}</p>
+        <div>
+          {repuesto?.descuento > 0 && <p style={{ fontSize: '12px', color: '#f50057', lineHeight: '12px', textDecoration: 'line-through' }}>${repuesto?.precio}</p>}
+          <p className={styles.textPrice}>${precioConDescuento?.toFixed(3)}{repuesto?.descuento > 0 && <b style={{ fontSize: '14px', color: 'green', fontWeight: '500', marginLeft: '8px' }}>{repuesto?.descuento}% OFF</b>}</p>
+        </div>
         <button style={{ cursor: 'pointer', fontWeight: '600', fontSize: '12px', padding: '0', borderRadius: '2px', alignSelf: 'flex-end', color: '#f50057', backgroundColor: 'inherit', margin: 0, height: '28px' }} className={styles.button}>
           Ver repuesto
           <ion-icon name="chevron-forward-outline"></ion-icon>

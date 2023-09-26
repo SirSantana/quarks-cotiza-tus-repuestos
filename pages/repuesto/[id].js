@@ -13,7 +13,7 @@ export default function Repuesto({ data }) {
 
   let precioConDescuento = precio - (precio * descuento / 100);
   let description = `${data?.repuesto}, Precio: $${precioConDescuento.toFixed(3)}, Marca: ${data?.fabricante}, PAGO CONTRAENTREGA y ENVIO GRATIS en Bogotá. ${data?.garantiaMeses} mes(es) de garantia. Cotiza tus repuestos chevrolet aqui!`
-  
+
   const urlPregunta = `https://www.cotizatusrepuestos.com${router.asPath}`
   const sendMessage = () => {
     let url = `https://api.whatsapp.com/send?phone=573138562763`;
@@ -21,20 +21,20 @@ export default function Repuesto({ data }) {
     window.open(url);
   }
 
-  const sendMessage2 =()=>{
+  const sendMessage2 = () => {
     let url = `https://api.whatsapp.com/send?phone=573138562763`;
     url += `&text=${encodeURI(`👋 Buen dia, estoy buscando el siguiente repuesto:`)}&app_absent=0`
     window.open(url);
   }
   let productoMarcado = {
-    repuesto:data?.repuesto,
-    descripcion:description,
-    precio:data?.precio,
-    stock:data?.stock,
-    image:data?.imagen,
-    url:"https://cotizatusrepuestos.com" + router.asPath
+    repuesto: data?.repuesto,
+    descripcion: description,
+    precio: data?.precio,
+    stock: data?.stock,
+    image: data?.imagen,
+    url: "https://cotizatusrepuestos.com" + router.asPath
   }
-  
+
   return (
     <Layout title={data?.repuesto + " " + data?.fabricante} marca={data?.fabricante} description={description} price={precioConDescuento.toFixed(3)} image={data?.imagen} url={router?.asPath} productoMarcado={productoMarcado}>
 
@@ -57,10 +57,12 @@ export default function Repuesto({ data }) {
             </div>
           </div>
           <div className={styles.cardDetalleRepuesto}>
-            <p style={{ fontSize: '12px', color: '#5C5C5C', margin: 0 }}>Nuevo | 2 Vendidos</p>
+            <p style={{ fontSize: '12px', color: '#5C5C5C', margin: 0 }}>Nuevo | {data?.ventas>0 && "+" + data?.ventas + " vendidos"}</p>
             <h1 className={styles.titleNombre}>{data?.repuesto}</h1>
-            <p style={{fontSize:'16px', textDecoration:'line-through'}}>${data?.precio}</p>
-            <h2 style={{alignItems:'center', display:'flex'}} className={styles.textPricePrincipal}>${precioConDescuento?.toFixed(3)}{data?.descuento > 0 && <b style={{ fontSize: '14px', color: 'green', fontWeight: '500', marginLeft: '8px' }}>{data?.descuento}% OFF</b>}</h2>
+            <div>
+              {data?.descuento > 0 && <p style={{ fontSize: '16px',color:'#f50057',lineHeight:'10px', textDecoration: 'line-through' }}>${data?.precio}</p>}
+              <h2 style={{ alignItems: 'center', display: 'flex' }} className={styles.textPricePrincipal}>${precioConDescuento?.toFixed(3)}{data?.descuento > 0 && <b style={{ fontSize: '14px', color: 'green', fontWeight: '500', marginLeft: '8px' }}>{data?.descuento}% OFF</b>}</h2>
+            </div>
             <img src={data?.imagen} className={styles.imgPrincipalRepuestoMobile} />
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '24px' }}>
@@ -93,7 +95,7 @@ export default function Repuesto({ data }) {
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
               <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Aplicaciones:</p>
-              <p style={{ fontSize: '14px', }}>{data?.modelosAutos?.map(el => el+" • ")}</p>
+              <p style={{ fontSize: '14px', }}>{data?.modelosAutos?.map(el => el + " • ")}</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
               <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Cilindrajes:</p>
@@ -121,7 +123,7 @@ export default function Repuesto({ data }) {
               <p style={{ color: '#373737', fontSize: '12px', fontWeight: '600' }}>No encuentras tu repuesto?</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: '4%' }}>
-              <button onClick={()=> router.push('/')} style={{ height: '40px', width: '48%', marginBottom: '16px', }} className={styles.button}>
+              <button onClick={() => router.push('/')} style={{ height: '40px', width: '48%', marginBottom: '16px', }} className={styles.button}>
                 Cotizar en linea
               </button>
               <button onClick={sendMessage2} className={styles.buttonSecondary} style={{ height: '40px', width: '48%', marginBottom: '16px', }} >
