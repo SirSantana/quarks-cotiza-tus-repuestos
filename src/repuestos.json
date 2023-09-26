@@ -257,7 +257,7 @@
   {
     "repuesto": "Guaya Capo Chevrolet Corsa",
     "descripcion": "Esta guaya de capó es una pieza esencial para tu Chevrolet Corsa con cilindraje de 1300 y 1400. Fabricada por el fabricante Tuba Brasil, esta guaya de alta calidad garantiza un funcionamiento sin problemas del capó en tu vehículo.",
-    "precio": "45.000",
+    "precio": "85.000",
     "marcaAuto": "Chevrolet",
     "modelosAutos": ["Corsa"],
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_936600-MCO71878330089_092023-F.webp",
@@ -269,7 +269,7 @@
     "cilindraje": ["1300, 1400"],
     "ubicacion": "Sección 2, Pasillo 3, Estante 5",
     "costo": "30.000",
-    "descuento": 5,
+    "descuento": 0,
     "tipo": "Guayas",
     "repuestoTipo": "Guaya Capo",
     "ventas": 0,
