@@ -32,7 +32,8 @@ export default function Repuesto({ data }) {
     precio: data?.precio,
     stock: data?.stock,
     image: data?.imagen,
-    url: "https://cotizatusrepuestos.com" + router.asPath
+    url: "https://cotizatusrepuestos.com" + router.asPath,
+    marca:data?.fabricante
   }
 
   return (

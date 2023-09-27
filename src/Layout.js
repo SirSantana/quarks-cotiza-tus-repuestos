@@ -3,7 +3,7 @@ import Navbar2 from './Navbar/Navbar2'
 import Footer from './Main/Footer'
 
 function generarMarcadoEstructurado(producto) {
-  if(producto){
+  if (producto) {
     return {
       "@context": "http://schema.org",
       "@type": "Product",
@@ -16,7 +16,36 @@ function generarMarcadoEstructurado(producto) {
         "price": producto.precio.replace(/\./g, ''),
         "priceCurrency": "COP", // Cambia esto según tu moneda
         "availability": producto.stock > 0 ? "http://schema.org/InStock" : "http://schema.org/OutOfStock"
-      }
+      },
+      "brand": {
+        "@type": "Brand",
+        "name": producto?.marca // Reemplaza con el nombre real de la marca del producto
+      },
+      // "shippingDetails": {
+      //   "@type": "OfferShippingDetails",
+      //   "shippingRate": "COSTO_DE_ENVIO_AQUI", // Agrega el costo de envío si es aplicable
+      //   "shippingDestination": {
+      //     "@type": "DefinedRegion",
+      //     "postalCode": "CODIGO_POSTAL_AQUI" // Agrega el código postal si es relevante
+      //   }
+      // },
+      // "review": {
+      //   "@type": "Review",
+      //   "reviewRating": {
+      //     "@type": "Rating",
+      //     "ratingValue": "VALORACION_DEL_PRODUCTO_AQUI" // Agrega la valoración del producto si está disponible
+      //   },
+      //   "author": {
+      //     "@type": "Person",
+      //     "name": "NOMBRE_DEL_AUTOR_DE_LA_RESEÑA" // Reemplaza con el nombre del autor de la reseña si está disponible
+      //   }
+      // },
+      // "priceValidUntil": "FECHA_DE_VALIDEZ_DEL_PRECIO_AQUI", // Agrega la fecha de validez del precio si es aplicable
+      // "aggregateRating": {
+      //   "@type": "AggregateRating",
+      //   "ratingValue": "VALORACION_PROMEDIO_DEL_PRODUCTO_AQUI", // Agrega la valoración promedio del producto si está disponible
+      //   "reviewCount": "NUMERO_DE_RESEÑAS_DEL_PRODUCTO_AQUI" // Agrega el número de reseñas del producto si está disponible
+      // }
     }
   }
 }
@@ -67,7 +96,7 @@ export default function Layout({ children, title, description, type, price, keyw
         <meta property="og:image:height" content='200' />
         <meta property="og:image:type" content='image/png' />
         {fecha && <meta property='date' content={fecha} />}
-        <link rel="icon" href={image? image:"/Logo1.png"} />
+        <link rel="icon" href={image ? image : "/Logo1.png"} />
 
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1233996863721897"
           crossorigin="anonymous"></script>
@@ -75,14 +104,14 @@ export default function Layout({ children, title, description, type, price, keyw
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-       {productoMarcado && 
-        <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(marcadoEstructurado) }}
-      />}
+        {productoMarcado &&
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(marcadoEstructurado) }}
+          />}
       </Head>
 
-        
+
       <main ><Navbar2 />{children}<Footer /></main>
 
     </>
