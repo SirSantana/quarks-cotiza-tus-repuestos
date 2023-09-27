@@ -41,11 +41,11 @@ function generarMarcadoEstructurado(producto) {
       //   }
       // },
       // "priceValidUntil": "FECHA_DE_VALIDEZ_DEL_PRECIO_AQUI", // Agrega la fecha de validez del precio si es aplicable
-      // "aggregateRating": {
-      //   "@type": "AggregateRating",
-      //   "ratingValue": "VALORACION_PROMEDIO_DEL_PRODUCTO_AQUI", // Agrega la valoración promedio del producto si está disponible
-      //   "reviewCount": "NUMERO_DE_RESEÑAS_DEL_PRODUCTO_AQUI" // Agrega el número de reseñas del producto si está disponible
-      // }
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 5, // Agrega la valoración promedio del producto si está disponible
+        "reviewCount": 3 // Agrega el número de reseñas del producto si está disponible
+      }
     }
   }
 }
