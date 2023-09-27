@@ -60,7 +60,7 @@ export default function Repuesto({ data }) {
             <p style={{ fontSize: '12px', color: '#5C5C5C', margin: 0 }}>Nuevo | {data?.ventas>0 && "+" + data?.ventas + " vendidos"}</p>
             <h1 className={styles.titleNombre}>{data?.repuesto}</h1>
             <div>
-              {data?.descuento > 0 && <p style={{ fontSize: '16px',color:'#f50057',lineHeight:'10px', textDecoration: 'line-through' }}>${data?.precio}</p>}
+              {data?.descuento > 0 && <p style={{ fontSize: '16px',color:'#f50057',lineHeight:'10px', textDecoration: 'line-through' }}>Antes ${data?.precio}</p>}
               <h2 style={{ alignItems: 'center', display: 'flex' }} className={styles.textPricePrincipal}>${precioConDescuento?.toFixed(3)}{data?.descuento > 0 && <b style={{ fontSize: '14px', color: 'green', fontWeight: '500', marginLeft: '8px' }}>{data?.descuento}% OFF</b>}</h2>
             </div>
             <img src={data?.imagen} className={styles.imgPrincipalRepuestoMobile} />
