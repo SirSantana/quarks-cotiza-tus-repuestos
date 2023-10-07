@@ -68,7 +68,7 @@ export default function Repuesto({ data }) {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '24px' }}>
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
-                <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px' }} name="car-sport-outline"></ion-icon>Vehiculo:</p>
+                <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px',}} name="car-sport-outline"></ion-icon>Vehiculo:</p>
                 <p style={{ fontSize: '14px', }}>{data?.marcaAuto}</p>
               </div>
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
@@ -92,19 +92,19 @@ export default function Repuesto({ data }) {
             <div style={{ width: '100%', margin: '16px 0', backgroundColor: '#d9d9d9', height: '1px' }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '8px' }}>
               <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px' }} name="reader-outline"></ion-icon>Descripcion:</p>
-              <p style={{ fontSize: '14px', }}>{data?.descripcion}</p>
+              <p style={{ fontSize: '14px',color:'#5c5c5c', lineHeight:'22px'}}>{data?.descripcion}</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
               <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Aplicaciones:</p>
-              <p style={{ fontSize: '14px', }}>{data?.modelosAutos?.map(el => el + " • ")}</p>
+              <p style={{ fontSize: '14px', color:'#5c5c5c'}}>{data?.modelosAutos?.map(el => el + " • ")}</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
               <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Cilindrajes:</p>
-              <p style={{ fontSize: '14px', }}>{data?.cilindraje?.map(el => el + " - ")}</p>
+              <p style={{ fontSize: '14px',color:'#5c5c5c' }}>{data?.cilindraje?.map(el => el + " - ")}</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
               <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Categoria repuesto:</p>
-              <p style={{ fontSize: '14px', }}>{data?.tipo}</p>
+              <p style={{ fontSize: '14px',color:'#5c5c5c' }}>{data?.tipo}</p>
             </div>
             <div style={{ width: '100%', margin: '16px 0', backgroundColor: '#d9d9d9', height: '1px' }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
