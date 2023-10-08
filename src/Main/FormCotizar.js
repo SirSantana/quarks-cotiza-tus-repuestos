@@ -76,12 +76,9 @@ export default function FormCotizar() {
   }, [data])
   return (
     <section className={styles.home} >
-      <div className={styles.homeText} style={{ flexDirection: 'row', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10%' }}>
         <h1 className={styles.title}>
           Cotiza tus repuestos Chevrolet facil, rapido y seguro
         </h1>
-      </div>
-
       <form onSubmit={handleSubmit} className={styles.homeCard}>
         <div
           // onClick={() => setVisibleMarca(true)}

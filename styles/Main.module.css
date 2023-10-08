@@ -20,7 +20,7 @@
   font-weight: 700;
   line-height: 120%;
   width: 60%;
-  text-wrap: balance;
+  text-align: center;
 
 }
 
@@ -360,7 +360,7 @@
   .homeCard {
     flex-direction: column;
     height: fit-content;
-    bottom: -300px;
+    bottom: -45vh;
   }
 
   .labelImage {
@@ -444,7 +444,7 @@
   }
 
   .home {
-    height: 50%;
+    height: 40vh;
   }
 
   .button {
@@ -452,9 +452,8 @@
   }
 
   .title {
-    font-size: 28px;
+    font-size: 20px;
     width: 95%;
-    line-height: 130%;
   }
 
   .input {
