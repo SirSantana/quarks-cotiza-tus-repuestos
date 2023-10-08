@@ -39,6 +39,7 @@
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
+  height: fit-content;
 }
 
 .label {
@@ -437,6 +438,8 @@
 
   .homeCard {
     flex-direction: column;
+    bottom: -60vh;
+
   }
 
   .title2 {
