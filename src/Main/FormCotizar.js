@@ -39,7 +39,7 @@ export default function FormCotizar() {
   }
   const sendMessage = (problema) => {
     let url = `https://api.whatsapp.com/send?phone=57${3187464554}`;
-   
+
     window.open(url);
   }
   useEffect(() => {
@@ -76,23 +76,27 @@ export default function FormCotizar() {
   }, [data])
   return (
     <section className={styles.home} >
-        <h1 className={styles.title}>
-          Cotiza tus repuestos Chevrolet facil, rapido y seguro
-        </h1>
+      <h1 className={styles.title}>
+        Cotiza tus repuestos Chevrolet facil, rapido y seguro
+      </h1>
       <form onSubmit={handleSubmit} className={styles.homeCard}>
-        <div
-          // onClick={() => setVisibleMarca(true)}
+        {/* <div
+          onClick={() => setVisibleMarca(true)}
           className={styles.locationDivMarca}>
           <label htmlFor='marca' className={styles.label}>Marca</label>
           <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+            <img src='/arrowDown.svg' style={{ height: '25px', width: '25px' }} />
             <img src={`./${marca}.png`} style={{ height: '40px', width: '40px' }} />
-            {/* <img src='/arrowDown.svg' style={{ height: '25px', width: '25px' }} /> */}
+          
           </div>
-        </div>
+        </div> */}
 
         <div className={styles.locationDivRef}>
           <label htmlFor='referencia' className={styles.label}>Referencia / Cilindraje / Modelo</label>
-          <input required id="referencia" className={styles.input} type='text' onChange={handleChange} name='referencia' placeholder='Corsa 1.4 2004' value={form.referencia} />
+          <div style={{display:'flex', flexDirection:'row', alignItems:'center', gap:'8px', justifyContent:'center'}}>
+            <img src={`./${marca}.png`} style={{ height: '32px', width: '32px', marginTop:'6px' }} />
+            <input  required id="referencia" style={{marginTop:'6px'}} className={styles.input} type='text' onChange={handleChange} name='referencia' placeholder='Corsa 1.4 2004' value={form.referencia} />
+          </div>
         </div>
 
         <div className={styles.locationDivRep}>
@@ -119,7 +123,7 @@ export default function FormCotizar() {
         {/* <input type={'submit'} className={styles.button} value='Wha' onClick={sendMessage} /> */}
 
         <input type={'submit'} className={styles.button} value='Cotizar' />
-        
+
 
       </form>
 
