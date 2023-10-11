@@ -49,7 +49,7 @@ function generarMarcadoEstructurado(producto) {
     }
   }
 }
-export default function Layout({ children, title, description, type, price, keywords, image, tags, url, marca, fecha, productoMarcado }) {
+export default function Layout({ children, title, description, type, icon,price, keywords, image, tags, url, marca, fecha, productoMarcado }) {
   const marcadoEstructurado = generarMarcadoEstructurado(productoMarcado);
   return (
     <>
@@ -96,7 +96,7 @@ export default function Layout({ children, title, description, type, price, keyw
         <meta property="og:image:height" content='200' />
         <meta property="og:image:type" content='image/png' />
         {fecha && <meta property='date' content={fecha} />}
-        <link rel="icon" href={image ? image : "/Logo1.png"} />
+        <link rel="icon" href={icon ? icon : "/Logo1.png"} />
 
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1233996863721897"
           crossorigin="anonymous"></script>

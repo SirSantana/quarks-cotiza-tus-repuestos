@@ -16,14 +16,14 @@ export default function Repuesto({ data }) {
 
   const urlPregunta = `https://www.cotizatusrepuestos.com${router.asPath}`
   const sendMessage = () => {
-    let url = `https://api.whatsapp.com/send?phone=573138562763`;
+    let url = `https://api.whatsapp.com/send?phone=573143551942`;
     url += `&text=${encodeURI(`👋 Hola, estoy interesado en el repuesto: ${data?.repuesto} \n 📌 Link del repuesto: ${urlPregunta}`)}&app_absent=0`
     window.open(url);
   }
 
   const sendMessage2 = () => {
-    let url = `https://api.whatsapp.com/send?phone=573138562763`;
-    url += `&text=${encodeURI(`👋 Buen dia, estoy buscando el siguiente repuesto:`)}&app_absent=0`
+    let url = `https://api.whatsapp.com/send?phone=573143551942`;
+    url += `&text=${encodeURI(`👋 Buen dia, estoy buscando el siguiente repuesto: ${urlPregunta}`)}&app_absent=0`
     window.open(url);
   }
   let productoMarcado = {
@@ -37,7 +37,7 @@ export default function Repuesto({ data }) {
   }
 
   return (
-    <Layout title={data?.repuesto + " " + data?.fabricante} marca={data?.fabricante} description={description} price={precioConDescuento.toFixed(3)} image={data?.imagen} url={router?.asPath} productoMarcado={productoMarcado}>
+    <Layout title={data?.repuesto + " " + data?.fabricante} marca={data?.fabricante} description={description} price={precioConDescuento.toFixed(3)} image={data?.imagen} icon={data?.imagen} url={router?.asPath} productoMarcado={productoMarcado}>
 
       <div className={styles.container2}>
         <p onClick={() => router?.back()} className={styles.textReturn} > Regresar | Repuestos &gt; {data?.marcaAuto} &gt; {data?.tipo} &gt; {data?.repuestoTipo} </p>
@@ -68,15 +68,15 @@ export default function Repuesto({ data }) {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '24px' }}>
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
-                <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px',}} name="car-sport-outline"></ion-icon>Vehiculo:</p>
+                <h3 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px',}} name="car-sport-outline"></ion-icon>Vehiculo:</h3>
                 <p style={{ fontSize: '14px', }}>{data?.marcaAuto}</p>
               </div>
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
-                <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px' }} name="shield-checkmark-outline"></ion-icon>Marca / Origen:</p>
+                <h3 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px' }} name="shield-checkmark-outline"></ion-icon>Marca / Origen:</h3>
                 <p style={{ fontSize: '14px', }}>{data?.fabricante}</p>
               </div>
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
-                <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px' }} name="ribbon-outline"></ion-icon>Garantìa:</p>
+                <h3 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px' }} name="ribbon-outline"></ion-icon>Garantìa:</h3>
                 <p style={{ fontSize: '14px', }}>{data?.garantiaMeses} meses</p>
               </div>
 
@@ -91,30 +91,30 @@ export default function Repuesto({ data }) {
             </button>
             <div style={{ width: '100%', margin: '16px 0', backgroundColor: '#d9d9d9', height: '1px' }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '8px' }}>
-              <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px' }} name="reader-outline"></ion-icon>Descripcion:</p>
+              <h3 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px' }} name="reader-outline"></ion-icon>Descripcion:</h3>
               <p style={{ fontSize: '14px',color:'#5c5c5c', lineHeight:'22px'}}>{data?.descripcion}</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
-              <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Aplicaciones:</p>
+              <h3 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Aplicaciones:</h3>
               <p style={{ fontSize: '14px', color:'#5c5c5c'}}>{data?.modelosAutos?.map(el => el + " • ")}</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
-              <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Cilindrajes:</p>
+              <h3 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Cilindrajes:</h3>
               <p style={{ fontSize: '14px',color:'#5c5c5c' }}>{data?.cilindraje?.map(el => el + " - ")}</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
-              <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Categoria repuesto:</p>
+              <h3 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Categoria repuesto:</h3>
               <p style={{ fontSize: '14px',color:'#5c5c5c' }}>{data?.tipo}</p>
             </div>
             <div style={{ width: '100%', margin: '16px 0', backgroundColor: '#d9d9d9', height: '1px' }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px' }} name="cube-outline"></ion-icon>Envios:</p>
+              <h3 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px' }} name="cube-outline"></ion-icon>Envios:</h3>
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
-                <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Principales Ciudades:</p>
+                <h4 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Principales Ciudades:</h4>
                 <p style={{ fontSize: '14px', }}>24hrs - 48hrs</p>
               </div>
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
-                <p style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Municipios:</p>
+                <h4 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Municipios:</h4>
                 <p style={{ fontSize: '14px', }}>24hrs - 72hrs</p>
               </div>
             </div>
