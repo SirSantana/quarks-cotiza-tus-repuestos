@@ -46,7 +46,7 @@ export default function Repuestos({ data }) {
     router.push(`/repuestos/chevrolet-corsa${e.value}`)
   }
   return (
-    <Layout title={`Repuestos ${parts.replace(/-/g, ' ')}`}>
+    <Layout description={'Encuentra los repuestos para tu Chevrolet Corsa al mejor precio, y de las mejores marcas. Repuestos de suspension, motor, electricos, lujos, inyeccion, refrigeracion y mas'}  title={`Repuestos ${parts.replace(/-/g, ' ')}`}>
       <div className={styles.container}>
 
 
