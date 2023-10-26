@@ -4,14 +4,22 @@ import repuestos from '@/src/repuestos.json'
 import CardRepuesto from "@/src/Repuestos/CardRepuesto";
 import { useRouter } from "next/router";
 
-
+const options = {
+  style: 'decimal',
+  useGrouping: true,
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+};
 export default function Repuesto({ data }) {
   const router = useRouter()
 
-  let precio = Number(data.precio);
-  let descuento = Number(data.descuento);
+  let precio = Number(data?.precio.toLocaleString('es-ES', options));
+  let price = parseFloat(data?.precio.replace(/\./g, ''))
 
-  let precioConDescuento = precio - (precio * descuento / 100);
+  let descuento = Number(data.descuento);
+  const descuentoFraccion = descuento / 100;
+
+  let precioConDescuento = price - (price * descuentoFraccion);
   let description = `${data?.repuesto}, Precio: $${precioConDescuento.toFixed(3)}, Marca: ${data?.fabricante}, PAGO CONTRAENTREGA y ENVIO GRATIS en Bogotá. ${data?.garantiaMeses} mes(es) de garantia. Cotiza tus repuestos chevrolet aqui!`
 
   const urlPregunta = `https://www.cotizatusrepuestos.com${router.asPath}`
@@ -62,7 +70,7 @@ export default function Repuesto({ data }) {
             <h1 className={styles.titleNombre}>{data?.repuesto}</h1>
             <div>
               {data?.descuento > 0 && <p style={{ fontSize: '16px',color:'#f50057',lineHeight:'10px', textDecoration: 'line-through' }}>Antes ${data?.precio}</p>}
-              <h2 style={{ alignItems: 'center', display: 'flex' }} className={styles.textPricePrincipal}>${precioConDescuento?.toFixed(3)}{data?.descuento > 0 && <b style={{ fontSize: '14px', color: 'green', fontWeight: '500', marginLeft: '8px' }}>{data?.descuento}% OFF</b>}</h2>
+              <h2 style={{ alignItems: 'center', display: 'flex' }} className={styles.textPricePrincipal}>${precioConDescuento?.toLocaleString()}{data?.descuento > 0 && <b style={{ fontSize: '14px', color: 'green', fontWeight: '500', marginLeft: '8px' }}>{data?.descuento}% OFF</b>}</h2>
             </div>
             <img src={data?.imagen} className={styles.imgPrincipalRepuestoMobile} />
 

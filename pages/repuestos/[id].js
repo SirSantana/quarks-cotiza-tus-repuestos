@@ -42,16 +42,18 @@ const customStyles = {
 export default function Repuestos({ data }) {
   const router = useRouter()
   const parts = router?.query?.id
+  
   const handleChange = (e) => {
     router.push(`/repuestos/chevrolet-corsa${e.value}`)
   }
+
   return (
     <Layout description={'Encuentra los repuestos para tu Chevrolet Corsa al mejor precio, y de las mejores marcas. Repuestos de suspension, motor, electricos, lujos, inyeccion, refrigeracion y mas'}  title={`Repuestos ${parts.replace(/-/g, ' ')}`}>
       <div className={styles.container}>
 
 
-        <h1 className={styles.title}>Repuestos {parts.replace(/-/g, ' ')}</h1>
-        <h4 style={{ textAlign: 'left' }} className={styles.subtitle2}>Se encontraron {data?.length} repuestos de Chevrolet Corsa</h4>
+        <h1 className={styles.title}>Repuestos de {parts.replace(/-/g, ' ')}</h1>
+        <h4 style={{ textAlign: 'left' }} className={styles.subtitle2}>Se encontraron {data?.length} repuestos de {parts.replace(/-/g, ' ')}</h4>
 
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-end', gap: '16px',marginTop:'16px' }}>
           <Select onChange={handleChange} options={options} styles={customStyles} defaultValue={options[0]} isSearchable={false}/>
