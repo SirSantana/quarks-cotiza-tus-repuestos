@@ -51,17 +51,13 @@ function generarMarcadoEstructurado(producto) {
 }
 export default function Layout({ children, title, description, type, icon,price, keywords, image, tags, url, marca, fecha, productoMarcado }) {
   const marcadoEstructurado = generarMarcadoEstructurado(productoMarcado);
-  console.log(price);
   return (
     <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content={title} key="title" />
-        <meta property='og:description' content={description} />
-        <meta property='og:site_name' content='Cotiza tus repuestos' />
-        <meta property='og:url' content='https://www.cotizatusrepuestos.com' />
+       
 
 
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -81,9 +77,10 @@ export default function Layout({ children, title, description, type, icon,price,
         <meta property="product:brand" content={marca} />
         <meta property="product:availability" content="Disponible" />
         <meta property="product:condition" content="Nuevo" />
-        <meta property="product:price:amount" content={price} />
+        <meta property="product:price:amount" content={Number(price).toLocaleString("es-ES")} />
         <meta property="product:price:currency" content="COP"></meta>
 
+        <meta property="twitter:description" content={description} />
         <meta property="og:title" content={title} key="title" />
         <meta property="og:image" content={image ? image : 'https://azurequarks.blob.core.windows.net/negocios/cotizatusrepuestos.png'} />
         <meta property="og:image:url" content={image ? image : 'https://azurequarks.blob.core.windows.net/negocios/cotizatusrepuestos.png'} />

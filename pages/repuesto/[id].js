@@ -34,17 +34,17 @@ export default function Repuesto({ data }) {
     url += `&text=${encodeURI(`👋 Buen dia, estoy buscando el siguiente repuesto: ${urlPregunta}`)}&app_absent=0`
     window.open(url);
   }
-  // let productoMarcado = {
-  //   repuesto: data?.repuesto,
-  //   descripcion: description,
-  //   precio: data?.precio,
-  //   stock: data?.stock,
-  //   image: data?.imagen,
-  //   url: "https://cotizatusrepuestos.com" + router.asPath,
-  //   marca:data?.fabricante
-  // }
+  let productoMarcado = {
+    repuesto: data?.repuesto,
+    descripcion: description,
+    precio: data?.precio,
+    stock: data?.stock,
+    image: data?.imagen,
+    url: "https://cotizatusrepuestos.com" + router.asPath,
+    marca:data?.fabricante
+  }
   return (
-    <Layout title={data?.repuesto + " " + data?.fabricante} marca={data?.fabricante} description={description} price={precioConDescuento?.toLocaleString()} image={data?.imagen} icon={data?.imagen} url={router?.asPath} >
+    <Layout title={data?.repuesto + " " + data?.fabricante} marca={data?.fabricante} description={description} price={precioConDescuento?.toLocaleString()} image={data?.imagen} icon={data?.imagen} url={router?.asPath} productoMarcado={productoMarcado} >
 
       <div className={styles.container2}>
         <p onClick={() => router?.back()} className={styles.textReturn} > Regresar | Repuestos &gt; {data?.marcaAuto} &gt; {data?.tipo} &gt; {data?.repuestoTipo} </p>
