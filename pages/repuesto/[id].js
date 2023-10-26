@@ -43,9 +43,8 @@ export default function Repuesto({ data }) {
   //   url: "https://cotizatusrepuestos.com" + router.asPath,
   //   marca:data?.fabricante
   // }
-
   return (
-    <Layout title={data?.repuesto + " " + data?.fabricante} marca={data?.fabricante} description={description} price={precioConDescuento.toFixed(3)} image={data?.imagen} icon={data?.imagen} url={router?.asPath} >
+    <Layout title={data?.repuesto + " " + data?.fabricante} marca={data?.fabricante} description={description} price={precioConDescuento?.toLocaleString()} image={data?.imagen} icon={data?.imagen} url={router?.asPath} >
 
       <div className={styles.container2}>
         <p onClick={() => router?.back()} className={styles.textReturn} > Regresar | Repuestos &gt; {data?.marcaAuto} &gt; {data?.tipo} &gt; {data?.repuestoTipo} </p>
