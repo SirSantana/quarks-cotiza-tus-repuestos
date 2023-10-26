@@ -50,7 +50,7 @@ function generarMarcadoEstructurado(producto) {
   }
 }
 export default function Layout({ children, title, description, type, icon,price, keywords, image, tags, url, marca, fecha, productoMarcado }) {
-  const marcadoEstructurado = generarMarcadoEstructurado(productoMarcado);
+  // const marcadoEstructurado = generarMarcadoEstructurado(productoMarcado);
   return (
     <>
       <Head>

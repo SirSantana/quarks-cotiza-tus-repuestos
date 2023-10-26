@@ -38,17 +38,17 @@ const customStyles = {
     zIndex: '999'
   }),
 };
-
+let description = 'Encuentraaa los repuestos para tu Chevrolet Corsa al mejor precio, y de las mejores marcas. Repuestos de suspension, motor, electricos, lujos, inyeccion, refrigeracion y mas'
 export default function Repuestos({ data }) {
   const router = useRouter()
   const parts = router?.query?.id
-  
+
   const handleChange = (e) => {
     router.push(`/repuestos/chevrolet-corsa${e.value}`)
   }
 
   return (
-    <Layout description={'Encuentra los repuestos para tu Chevrolet Corsa al mejor precio, y de las mejores marcas. Repuestos de suspension, motor, electricos, lujos, inyeccion, refrigeracion y mas'}  title={`Repuestos ${parts.replace(/-/g, ' ')}`}>
+    <Layout title={`Repuestos ${parts.replace(/-/g, ' ')}`}description={description}  >
       <div className={styles.container}>
 
 
