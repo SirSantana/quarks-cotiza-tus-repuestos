@@ -77,7 +77,7 @@ export default function Layout({ children, title, description, type, icon,price,
         <meta property="product:brand" content={marca} />
         <meta property="product:availability" content="Disponible" />
         <meta property="product:condition" content="Nuevo" />
-        <meta property="product:price:amount" content={Number(price).toLocaleString("es-ES")} />
+        <meta property="product:price:amount" content={price} />
         <meta property="product:price:currency" content="COP"></meta>
 
         <meta property="twitter:description" content={description} />
