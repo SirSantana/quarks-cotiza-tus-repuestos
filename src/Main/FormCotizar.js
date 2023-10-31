@@ -74,6 +74,7 @@ export default function FormCotizar() {
       }, 2000)
     }
   }, [data])
+  console.log(form);
   return (
     <section className={styles.home} >
       <h1 className={styles.title}>
