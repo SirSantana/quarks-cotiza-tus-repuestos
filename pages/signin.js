@@ -11,7 +11,7 @@ const initialForm = {
 export default function SignIn() {
   const [form, setForm] = useState(initialForm)
   const [signIn, { data, loading, error }] = useMutation(SIGN_IN_MUTATION)
-  const { login } = useAuth()
+  const { login, user } = useAuth()
   const router = useRouter()
 
   const handleChange = (e) => {
@@ -30,6 +30,8 @@ export default function SignIn() {
       router.replace(`/vendedor/perfil/${data?.signIn?.user?.id}`)
     }
   }, [data])
+  console.log(user);
+
 
   return (
     <form onSubmit={handleSubmit} >
