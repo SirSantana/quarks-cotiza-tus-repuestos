@@ -37,11 +37,11 @@ export default function FormCotizar() {
     setForm(initialForm)
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-  const sendMessage = (problema) => {
-    let url = `https://api.whatsapp.com/send?phone=57${3187464554}`;
+  // const sendMessage = (problema) => {
+  //   let url = `https://api.whatsapp.com/send?phone=57${3187464554}`;
 
-    window.open(url);
-  }
+  //   window.open(url);
+  // }
   useEffect(() => {
     if (!selectedFile) {
       setPreview(undefined)
@@ -74,28 +74,16 @@ export default function FormCotizar() {
       }, 2000)
     }
   }, [data])
-  console.log(form);
   return (
     <section className={styles.home} >
       <h1 className={styles.title}>
         Cotiza tus repuestos Chevrolet facil, rapido y seguro
       </h1>
       <form onSubmit={handleSubmit} className={styles.homeCard}>
-        {/* <div
-          onClick={() => setVisibleMarca(true)}
-          className={styles.locationDivMarca}>
-          <label htmlFor='marca' className={styles.label}>Marca</label>
-          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-            <img src='/arrowDown.svg' style={{ height: '25px', width: '25px' }} />
-            <img src={`./${marca}.png`} style={{ height: '40px', width: '40px' }} />
-          
-          </div>
-        </div> */}
-
         <div className={styles.locationDivRef}>
           <label htmlFor='referencia' className={styles.label}>Referencia / Cilindraje / Modelo</label>
           <div style={{display:'flex', flexDirection:'row', alignItems:'center', gap:'8px', justifyContent:'center'}}>
-            <img src={`./${marca}.png`} style={{ height: '32px', width: '32px', marginTop:'6px' }} />
+            <img src={`./${marca}.png`} style={{ height: '32px', width: '32px', marginTop:'6px' }} alt={`Cotiza tus repuestos ${marca}`} />
             <input  required id="referencia" style={{marginTop:'6px'}} className={styles.input} type='text' onChange={handleChange} name='referencia' placeholder='Corsa 1.4 2004' value={form.referencia} />
           </div>
         </div>
@@ -114,10 +102,10 @@ export default function FormCotizar() {
           <label className={styles.labelImage} htmlFor='image'>
             {selectedFile ?
               <div className={styles.containerImageSelected}>
-                <img src={preview} style={{ width: '50px', height: '50px' }} />
-                <img onClick={cancelImage} src={'/trash.svg'} style={{ width: '25px', height: '25px', cursor: 'pointer' }} />
+                <img src={preview} style={{ width: '50px', height: '50px', objectFit:'cover' }} />
+                <ion-icon onClick={cancelImage} style={{fontSize:'24px',cursor:'pointer', color:'#5B0221'}} name="trash"></ion-icon>
               </div >
-              : <img src='/image.svg' style={{ width: '25px', height: '25px', cursor: 'pointer' }} />}
+              : <ion-icon style={{fontSize:'24px',  color:'#5B0221'}} name="image"></ion-icon>}
 
           </label>
         </div>

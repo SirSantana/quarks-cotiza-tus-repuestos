@@ -18,6 +18,7 @@ const authLink = setContext(async (_, { headers }) => {
     token = localStorage.getItem('token');
     return {
       headers: {
+        ...headers,
         authorization: token || '',
       }
     }
@@ -28,5 +29,8 @@ const authLink = setContext(async (_, { headers }) => {
 
 export const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache()
-})
+  cache: new InMemoryCache(),
+  onError: (error) => {
+    console.error('Apollo Client Error:', error);
+  },
+});

@@ -22,7 +22,6 @@ export default function OneCotizacion({data, data2, data3}){
         <div className={styles.gridCardTalleres}>
           {data?.getPreguntas?.map(el => (
             <CardCotizacion cotizacion={el} data2={data2} data3={data3}/>
-
           ))}
         </div>
       </section>

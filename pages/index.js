@@ -66,9 +66,9 @@ export default function Home() {
         <Navbar />
         <FormCotizar />
         <ListMarcasComercializadas />
-        <RepuestosHome/>
+        {/* <RepuestosHome/> */}
 
-        <PrevCotizaciones />
+        {/* <PrevCotizaciones /> */}
         <PasosCotizacion />
         <SectionPasos />
         <CallToActionFooter/>

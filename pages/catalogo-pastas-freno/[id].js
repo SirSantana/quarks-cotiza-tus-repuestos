@@ -4,12 +4,7 @@ import Content from "@/src/PastasFreno/Content";
 import SideBar from "@/src/PastasFreno/SideBar";
 import pastasfreno from '@/src/pastas-freno.json'
 
-import styles from '@/styles/PastasFreno.module.css'
-
-
 export default function PastaFreno({ data }) {
-  let eje = 'delantero'
-  console.log(data);
   return (
     <Layout title={'Catalogo Pastas Freno'} navbar={false}>
       <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>

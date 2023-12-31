@@ -13,7 +13,6 @@ const options = {
 export default function Repuesto({ data }) {
   const router = useRouter()
 
-  let precio = Number(data?.precio.toLocaleString('es-ES', options));
   let price = parseFloat(data?.precio.replace(/\./g, ''))
 
   let descuento = Number(data.descuento);

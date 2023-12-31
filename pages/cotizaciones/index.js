@@ -1,5 +1,5 @@
 import { client } from "@/client";
-import { GET_ONE_PREGUNTA, GET_PREV_PREGUNTAS } from "@/graphql/queries";
+import { GET_PREV_PREGUNTAS } from "@/graphql/queries";
 import Layout from "@/src/Layout";
 import CardCotizacion from "@/src/Main/CardCotizacion";
 import styles from '@/styles/Landing.module.css'

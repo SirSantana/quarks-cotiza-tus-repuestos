@@ -27,16 +27,16 @@ export default function Footer() {
         </div>
         <div className={styles.containerSocial}>
           <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '8px', margin: '16px 0' }}>
-            <Link rel='noopener noreferrer' style={{ textDecoration: 'none' }} href='https://www.instagram.com/quarks_automotriz/'><img src={InstagramLogo.src} className={styles.logo} /></Link>
-            <Link rel='noopener noreferrer' style={{ textDecoration: 'none' }} href='https://www.facebook.com/quarksautomotriz/'><img src={FacebookLogo.src} className={styles.logo} /></Link>
-            <Link rel='noopener noreferrer' style={{ textDecoration: 'none' }} href='https://www.facebook.com/quarksautomotriz/'><img src={WhatsappLogo.src} className={styles.logo} /></Link>
+            <Link rel='noopener noreferrer' style={{ textDecoration: 'none' }} href='https://www.instagram.com/quarks_automotriz/'><img src={InstagramLogo.src} className={styles.logo} alt={`Cotiza tus repuestos Instagram`} /></Link>
+            <Link rel='noopener noreferrer' style={{ textDecoration: 'none' }} href='https://www.facebook.com/quarksautomotriz/'><img src={FacebookLogo.src} className={styles.logo}alt={`Cotiza tus repuestos Facebook`} /></Link>
+            <Link rel='noopener noreferrer' style={{ textDecoration: 'none' }} href='https://www.facebook.com/quarksautomotriz/'><img src={WhatsappLogo.src} className={styles.logo} alt={`Cotiza tus repuestos Whatsapp`}/></Link>
 
           </div>
           <p className={styles.subtitleCopy}>(C) copyright Quarks 2023</p>
         </div>
         <div style={{ display: 'flex', justifyContent: 'flex-end', flexDirection: 'column', alignItems: 'center', alignSelf: 'center' }}>
           <h4 style={{ color: 'white', fontSize: '20px', marginBottom: '16px' }}>Quarks Repuestos</h4>
-          <img src={Logo.src} className={styles.image} />
+          <img src={Logo.src} className={styles.image} alt={'Cotiza tus repuestos Logo'}/>
         </div>
       </div>
     </footer>

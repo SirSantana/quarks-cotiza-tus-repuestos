@@ -39,14 +39,14 @@ export default function ListMarcasComercializadas() {
       </h2>
       <div className={styles.containerImgTalleres}>
         {imagesMarcas.map((el, index) => (
-           <div className={styles.imageWrapper}>
+           <div key={index} className={styles.imageWrapper}>
            {isLoading ? (
               <div className={styles.skeletonLoader} />
             ) : (
               <img
                 className={styles.imgFotoTaller}
                 src={el.src}
-                alt={el.alt}
+                alt={`Repuestos de carro en Bogota marca ${el.nombre}`}
               />
             )}
             <div className={styles.tooltip}>{el.nombre}</div>
