@@ -41,15 +41,19 @@ export default function Navbar() {
           </Link>
 
           <ul className={styles.navv}>
-          <li style={{ listStyle: 'none', cursor: 'pointer', textDecoration: 'none', color: router?.pathname === '/repuestos/chevrolet-corsa' ? '#c5c5c5' : 'white' , fontWeight:'500' }} className={styles.subtitle}>
-          <Link style={{ textDecoration: 'none', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px',listStyle: 'none', cursor: 'pointer', textDecoration: 'none', color: router?.pathname === '/repuestos/chevrolet-corsa' ? '#c5c5c5' : 'white' , fontWeight:'500'  }} href={'/repuestos/chevrolet-corsa'}>Productos
-            </Link>
-          </li>
+            <li style={{ listStyle: 'none', cursor: 'pointer', textDecoration: 'none', color: router?.pathname === '/repuestos/chevrolet-corsa' ? '#c5c5c5' : 'white', fontWeight: '500' }} className={styles.subtitle}>
+              <Link style={{ textDecoration: 'none', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px', listStyle: 'none', cursor: 'pointer', textDecoration: 'none', color: router?.pathname === '/repuestos/chevrolet-corsa' ? '#c5c5c5' : 'white', fontWeight: '500' }} href={'/repuestos/chevrolet-corsa'}>Productos
+              </Link>
+            </li>
 
-           
-            <Link style={{ textDecoration: 'none', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }} href={'/cotizaciones'}>
-              <li style={{ listStyle: 'none', cursor: 'pointer', textDecoration: 'none', color: router?.pathname === '/cotizaciones' ? '#c5c5c5' : 'white' , fontWeight:'500'}} className={styles.subtitle}>Cotizaciones</li>
-            </Link>
+            <li style={{ listStyle: 'none', cursor: 'pointer', textDecoration: 'none', color: router?.pathname === '/cotizaciones' ? '#c5c5c5' : 'white', fontWeight: '500' }} className={styles.subtitle}>
+              <Link style={{ textDecoration: 'none', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px',listStyle: 'none', cursor: 'pointer', textDecoration: 'none', color: router?.pathname === '/cotizaciones' ? '#c5c5c5' : 'white', fontWeight: '500' }} href={'/cotizaciones'}>
+                Cotizaciones
+              </Link>
+
+            </li>
+
+
           </ul>
         </div>
       </div>

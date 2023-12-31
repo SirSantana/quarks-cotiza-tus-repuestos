@@ -15,7 +15,7 @@ export default function CardRepuesto({ repuesto }) {
   // let precioConDescuento = precio - (precio * descuento / 100);
   return (
     <Link href={`/repuesto/${repuesto?.repuesto.replace(/ /g, "-").replace(/\//g, "-")}-${repuesto.idUrl}`} style={{ textDecoration: 'none' }} className={styles.cardRepuesto}>
-      <img src={repuesto?.imagen} className={styles.imgRepuestoCard} />
+      <img src={repuesto?.imagen} className={styles.imgRepuestoCard} alt={repuesto?.repuesto}/>
       <h2 className={styles.titleRepuesto}>{repuesto.repuesto}</h2>
       <p style={{fontSize:'14px',fontWeight:'500', color:'#5c5c5c'}}>{repuesto?.fabricante}</p>
 

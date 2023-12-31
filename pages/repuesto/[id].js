@@ -57,7 +57,7 @@ export default function Repuesto({ data }) {
               <h2 className={styles.titleNombre}>Otros repuestos</h2>
               <div style={{ display: 'flex', flexDirection: 'row', gap: '16px', justifyContent: 'space-between', width: '100%', }}>
                 {repuestos?.slice(0, 2).map(repuesto => (
-                  <CardRepuesto repuesto={repuesto} />
+                  <CardRepuesto key={repuesto.repuesto} repuesto={repuesto} />
                 ))}
               </div>
 
@@ -70,7 +70,7 @@ export default function Repuesto({ data }) {
               {data?.descuento > 0 && <p style={{ fontSize: '16px',color:'#f50057',lineHeight:'10px', textDecoration: 'line-through' }}>Antes ${data?.precio}</p>}
               <h2 style={{ alignItems: 'center', display: 'flex' }} className={styles.textPricePrincipal}>${precioConDescuento?.toLocaleString()}{data?.descuento > 0 && <b style={{ fontSize: '14px', color: 'green', fontWeight: '500', marginLeft: '8px' }}>{data?.descuento}% OFF</b>}</h2>
             </div>
-            <img src={data?.imagen} className={styles.imgPrincipalRepuestoMobile} />
+            <img src={data?.imagen} className={styles.imgPrincipalRepuestoMobile} alt={data?.repuesto} />
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '24px' }}>
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
@@ -144,7 +144,7 @@ export default function Repuesto({ data }) {
               <h2 className={styles.titleNombre}>Otros repuestos</h2>
               <div style={{ display: 'flex', flexDirection: 'row', gap: '16px', justifyContent: 'space-between', width: '100%', }}>
                 {repuestos?.slice(0, 2).map(repuesto => (
-                  <CardRepuesto repuesto={repuesto} />
+                  <CardRepuesto key={repuesto?.repuesto} repuesto={repuesto} />
                 ))}
               </div>
 
