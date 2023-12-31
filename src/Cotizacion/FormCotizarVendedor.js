@@ -26,7 +26,7 @@ export default function FormCotizar({ setVisibleCotizar, celular, emailVendedor,
   const { cotizacion } = router?.query
   const partes = cotizacion?.split("-")
   const id = partes?.[partes?.length - 1]
-  const [createCotizacion, { data, loading, error }] = useMutation(CREATE_COTIZACION,{ refetchQueries: [{ query: GET_COTIZACIONES, variables: { id: id } }] })
+  const [createCotizacion, { data, loading, error }] = useMutation(CREATE_COTIZACION,{  refetchQueries: [{ query: GET_COTIZACIONES, variables: { id: id } }] })
   
   const [visibleCotizado, setVisibleCotizado] = useState(false)
 

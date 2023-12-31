@@ -1,0 +1,38 @@
+.contenedorConMalla {
+  /* background: linear-gradient(90deg, #acbeef 1px, transparent 1px),
+    linear-gradient(180deg, #8A9ED6 1px, transparent 1px); */
+  background-size: 40px 40px;
+  height: 100%;
+  width: 70%;
+  margin-top: 48px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Ajusta el tamaño según tus necesidades */
+}
+
+.containerAplicaciones {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 4px;
+  height: fit-content;
+}
+
+.containerCardPrevPastaFreno {
+  width: 300px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.10) 0px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap:16px;
+  outline: none;
+  text-decoration: none;
+  transition: transform 0.4s ease, background-color 0.2s ease;
+
+}
+.containerCardPrevPastaFreno:hover{
+  transform: scale(0.95)
+}

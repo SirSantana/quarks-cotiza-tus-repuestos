@@ -4,6 +4,8 @@ import Footer from './Main/Footer'
 
 function generarMarcadoEstructurado(producto) {
   if (producto) {
+    const precioNumerico = parseFloat(producto.precio.replace(/\./g, ''));
+
     return {
       "@context": "http://schema.org",
       "@type": "Product",
@@ -13,7 +15,7 @@ function generarMarcadoEstructurado(producto) {
       "image": producto.image,
       "offers": {
         "@type": "Offer",
-        "price": producto.precio.replace(/\./g, ''),
+        "price": precioNumerico,
         "priceCurrency": "COP", // Cambia esto según tu moneda
         "availability": producto.stock > 0 ? "http://schema.org/InStock" : "http://schema.org/OutOfStock"
       },
@@ -21,26 +23,6 @@ function generarMarcadoEstructurado(producto) {
         "@type": "Brand",
         "name": producto?.marca // Reemplaza con el nombre real de la marca del producto
       },
-      // "shippingDetails": {
-      //   "@type": "OfferShippingDetails",
-      //   "shippingRate": "COSTO_DE_ENVIO_AQUI", // Agrega el costo de envío si es aplicable
-      //   "shippingDestination": {
-      //     "@type": "DefinedRegion",
-      //     "postalCode": "CODIGO_POSTAL_AQUI" // Agrega el código postal si es relevante
-      //   }
-      // },
-      // "review": {
-      //   "@type": "Review",
-      //   "reviewRating": {
-      //     "@type": "Rating",
-      //     "ratingValue": "VALORACION_DEL_PRODUCTO_AQUI" // Agrega la valoración del producto si está disponible
-      //   },
-      //   "author": {
-      //     "@type": "Person",
-      //     "name": "NOMBRE_DEL_AUTOR_DE_LA_RESEÑA" // Reemplaza con el nombre del autor de la reseña si está disponible
-      //   }
-      // },
-      // "priceValidUntil": "FECHA_DE_VALIDEZ_DEL_PRECIO_AQUI", // Agrega la fecha de validez del precio si es aplicable
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": 5, // Agrega la valoración promedio del producto si está disponible
@@ -49,7 +31,7 @@ function generarMarcadoEstructurado(producto) {
     }
   }
 }
-export default function Layout({ children, title, description, type, icon,price, keywords, image, tags, url, marca, fecha, productoMarcado }) {
+export default function Layout({ children, title, description, type, icon,price, keywords, image, tags, url, marca, fecha, productoMarcado, navbar=true }) {
   const marcadoEstructurado = generarMarcadoEstructurado(productoMarcado);
   return (
     <>
@@ -110,7 +92,7 @@ export default function Layout({ children, title, description, type, icon,price,
       </Head>
 
 
-      <main ><Navbar2 />{children}<Footer /></main>
+      <main >{navbar&& <Navbar2 />}{children}<Footer /></main>
 
     </>
   )
