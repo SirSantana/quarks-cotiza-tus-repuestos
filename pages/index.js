@@ -60,7 +60,17 @@ export default function Home() {
         <meta property="og:image:width" content='1080' />
         <meta property="og:image:height" content='1080' />
         <meta property="og:image:type" content='image/png' /> */}
-
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "kjzmdhh19i");
+            `,
+          }}
+        />
       </Head>
       <main className={styles.main}>
         <Navbar />
@@ -71,7 +81,7 @@ export default function Home() {
         {/* <PrevCotizaciones /> */}
         <PasosCotizacion />
         <SectionPasos />
-        <CallToActionFooter/>
+        <CallToActionFooter />
         {/* <PasosCotizacion />
         <Beneficios />
         <Footer /> */}
