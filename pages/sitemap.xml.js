@@ -11,12 +11,12 @@ const generateSiteMap = (data) => {
   return `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-      <loc>https://cotizatusrepuestos.com</loc>
+      <loc>https://www.cotizatusrepuestos.com</loc>
     </url>
     ${posts && posts.map(item => {
     return `<url>
         <loc>
-          https://cotizatusrepuestos.com/repuesto/${item?.repuesto.replace(/ /g, "-").replace(/\//g, "-")}-${item.idUrl}
+          https://www.cotizatusrepuestos.com/repuesto/${item?.repuesto.replace(/ /g, "-").replace(/\//g, "-")}-${item.idUrl}
         </loc>
       </url>`;
   }).join('')}

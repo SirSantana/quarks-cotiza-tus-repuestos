@@ -1535,7 +1535,7 @@
     "idUrl": 71
   },
   {
-    "repuesto": "Muñecos X2 Lh/rh Chevrolet Captiva 2.4 / Tracker ",
+    "repuesto": "Muñecos X2 Lh/rh Chevrolet Captiva 2.4 ",
     "descripcion": "",
     "precio": "90.000",
     "marcaAuto": "Chevrolet",
@@ -1952,5 +1952,26 @@
     "repuestoTipo": "Axial",
     "ventas": 2,
     "idUrl": 91
+  },
+  {
+    "repuesto": "Brazo Axial Chevrolet Tracker",
+    "descripcion": "El Brazo Axial Chevrolet Tracker es una pieza crucial para el sistema de dirección de tu Chevrolet Vitara para cilindrajes 1600 y 2000. Fabricado por Saher, ofrece una gran calidad.",
+    "precio": "98.000",
+    "marcaAuto": "Chevrolet",
+    "modelosAutos": ["Tracker"],
+    "imagen": "",
+    "stock": 2,
+    "fabricante": "Saher",
+    "calidad": "Homologado",
+    "garantiaMeses": 3,
+    "añoAuto": "",
+    "cilindraje": [],
+    "ubicacion": "Sección 2, Pasillo 3, Estante 5",
+    "costo": "170.000",
+    "descuento": 0,
+    "tipo": "Suspension",
+    "repuestoTipo": "Axial",
+    "ventas": 2,
+    "idUrl": 92
   }
 ]
