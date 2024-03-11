@@ -82,9 +82,9 @@ export default function FormCotizar() {
       <form onSubmit={handleSubmit} className={styles.homeCard}>
         <div className={styles.locationDivRef}>
           <label htmlFor='referencia' className={styles.label}>Referencia / Cilindraje / Modelo</label>
-          <div style={{display:'flex', flexDirection:'row', alignItems:'center', gap:'8px', justifyContent:'center'}}>
-            <img src={`./${marca}.png`} style={{ height: '32px', width: '32px', marginTop:'6px' }} alt={`Cotiza tus repuestos ${marca}`} />
-            <input  required id="referencia" style={{marginTop:'6px'}} className={styles.input} type='text' onChange={handleChange} name='referencia' placeholder='Corsa 1.4 2004' value={form.referencia} />
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
+            <img src={`./${marca}.png`} style={{ height: '32px', width: '32px', marginTop: '6px' }} alt={`Cotiza tus repuestos ${marca}`} />
+            <input required id="referencia" style={{ marginTop: '6px' }} className={styles.input} type='text' onChange={handleChange} name='referencia' placeholder='Corsa 1.4 2004' value={form.referencia} />
           </div>
         </div>
 
@@ -102,10 +102,10 @@ export default function FormCotizar() {
           <label className={styles.labelImage} htmlFor='image'>
             {selectedFile ?
               <div className={styles.containerImageSelected}>
-                <img src={preview} style={{ width: '50px', height: '50px', objectFit:'cover' }} />
-                <ion-icon onClick={cancelImage} style={{fontSize:'24px',cursor:'pointer', color:'#5B0221'}} name="trash"></ion-icon>
+                <img src={preview} style={{ width: '50px', height: '50px', objectFit: 'cover' }} />
+                <ion-icon onClick={cancelImage} style={{ fontSize: '24px', cursor: 'pointer', color: '#5B0221' }} name="trash"></ion-icon>
               </div >
-              : <ion-icon style={{fontSize:'24px',  color:'#5B0221'}} name="image"></ion-icon>}
+              : <ion-icon style={{ fontSize: '24px', color: '#5B0221' }} name="image"></ion-icon>}
 
           </label>
         </div>

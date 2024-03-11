@@ -10,6 +10,7 @@ import SectionPasos from '@/src/Main/Section4'
 import PrevCotizaciones from '@/src/Main/PrevCotizaciones'
 import CallToActionFooter from '@/src/Main/CallToActionFooter'
 import RepuestosHome from '@/src/Main/RepuestosHome'
+import ProductosHome from '@/src/Main/ProductosHome'
 
 
 export default function Home() {
@@ -75,6 +76,7 @@ export default function Home() {
       <main className={styles.main}>
         <Navbar />
         <FormCotizar />
+        <ProductosHome/>
         <ListMarcasComercializadas />
         {/* <RepuestosHome/> */}
 

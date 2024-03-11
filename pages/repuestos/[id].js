@@ -76,7 +76,10 @@ export async function getServerSideProps({ query }) {
 
   const repuestosFiltrados = repuestos.filter((repuesto) => {
     const marcaAuto = repuesto.marcaAuto.toLowerCase();
-    const modelosAutos = repuesto.modelosAutos.map((modelo) => modelo.toLowerCase());
+    if(!parts[1]){
+      return marcaAuto === parts[0]
+    }
+    const modelosAutos = repuesto?.modelosAutos?.map((modelo) => modelo.toLowerCase());
     return (
       marcaAuto === parts[0].toLowerCase() &&
       modelosAutos.includes(parts[1].toLowerCase())

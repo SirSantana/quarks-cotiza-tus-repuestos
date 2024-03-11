@@ -15,7 +15,7 @@ export default function Repuesto({ data }) {
 
   let price = parseFloat(data?.precio.replace(/\./g, ''))
 
-  let descuento = Number(data.descuento);
+  let descuento = Number(data?.descuento);
   const descuentoFraccion = descuento / 100;
 
   let precioConDescuento = price - (price * descuentoFraccion);

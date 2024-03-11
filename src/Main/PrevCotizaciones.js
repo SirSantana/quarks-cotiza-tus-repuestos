@@ -11,18 +11,17 @@ import { useQuery } from '@apollo/client';
 
 
 export default function PrevCotizaciones() {
-  const {data, loading, error} = useQuery(GET_LAST_PREGUNTAS)
-
-  console.log(data);
+  const { data, loading, error } = useQuery(GET_LAST_PREGUNTAS)
   return (
     <section className={styles.containerGridTalleres}>
-      <h2 className={styles.title2} style={{ textAlign: 'center', marginBottom:'64px' }}>
+      <h2 className={styles.title2} style={{ textAlign: 'center', marginBottom: '64px' }}>
         Otras personas han cotizado recientemente
       </h2>
       <div className={styles.gridCardTalleres}>
         {data?.getLastPreguntas?.map(el => (
           <CardCotizacion cotizacion={el} />
         ))}
+       
       </div>
     </section>
 

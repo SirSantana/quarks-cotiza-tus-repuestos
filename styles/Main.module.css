@@ -28,12 +28,12 @@
   width: 80%;
   border-radius: 1rem;
   padding: 20px;
-  bottom: -44px;
   position: absolute;
   background-color: white;
   justify-content: space-between;
   transform: translate(-50%);
   left: 50%;
+  top: 85%;
   gap: 1rem;
   box-shadow: 0 2px 8px 4px rgb(178, 178, 178, 0.45);
   display: flex;
@@ -361,7 +361,8 @@
   .homeCard {
     flex-direction: column;
     height: fit-content;
-    bottom: -45vh;
+    bottom: 65%;
+
   }
 
   .labelImage {
@@ -412,7 +413,9 @@
     width: 95%;
     padding: 64px 0;
   }
-
+  .home{
+    margin-bottom: 340px;
+  }
   .imgFotoTaller {
     width: 48px;
     height: 48px;
@@ -438,7 +441,7 @@
 
   .homeCard {
     flex-direction: column;
-    bottom: -45vh;
+    bottom: 65%;
 
   }
 

@@ -35,7 +35,7 @@ export default function ListMarcasComercializadas() {
   return (
     <section className={styles.containerListTalleres}>
       <h2 className={styles.title2} style={{ textAlign: 'center', color: '#373737' }}>
-        Las mejores marcas del sector automotriz
+        Repuestos Chevrolet originales
       </h2>
       <div className={styles.containerImgTalleres}>
         {imagesMarcas.map((el, index) => (
