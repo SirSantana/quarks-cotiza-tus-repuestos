@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import Navbar from '@/src/Navbar/Navbar'
 import FormCotizar from '@/src/Main/FormCotizar'
@@ -7,11 +6,12 @@ import ListMarcasComercializadas from '@/src/Main/ListMarcasComercializadas'
 import PasosCotizacion from '@/src/Main/PasosDeCotizacion'
 import Footer from '@/src/Main/Footer'
 import SectionPasos from '@/src/Main/Section4'
-import PrevCotizaciones from '@/src/Main/PrevCotizaciones'
 import CallToActionFooter from '@/src/Main/CallToActionFooter'
-import RepuestosHome from '@/src/Main/RepuestosHome'
 import ProductosHome from '@/src/Main/ProductosHome'
+import dynamic from 'next/dynamic'
 
+const ToolsQuarks = dynamic(() => import('@/src/Main/ToolsQuarks'),
+  { ssr: false })
 
 export default function Home() {
   let description = '¡Encuentra los repuestos Chevrolet que necesitas en Colombia! Cotiza tus piezas y accesorios para vehículos Chevrolet de manera rápida, segura y sencilla Obtén las mejores ofertas en repuestos originales y homologaso con envios gratis y pago contraentrega para tu Chevrolet. Simplifica tu búsqueda y ahorra tiempo y dinero. ¡Cotiza hoy mismo en línea!'
@@ -76,7 +76,7 @@ export default function Home() {
       <main className={styles.main}>
         <Navbar />
         <FormCotizar />
-        <ProductosHome/>
+        <ProductosHome />
         <ListMarcasComercializadas />
         {/* <RepuestosHome/> */}
 
@@ -84,6 +84,7 @@ export default function Home() {
         <PasosCotizacion />
         <SectionPasos />
         <CallToActionFooter />
+        <ToolsQuarks/>
         {/* <PasosCotizacion />
         <Beneficios />
         <Footer /> */}
