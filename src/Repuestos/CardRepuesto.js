@@ -16,7 +16,7 @@ export default function CardRepuesto({ repuesto }) {
   return (
     <Link href={`/repuesto/${repuesto?.repuesto.replace(/ /g, "-").replace(/\//g, "-")}-${repuesto.idUrl}`} style={{ textDecoration: 'none' }} className={styles.cardRepuesto}>
       <img src={repuesto?.imagen} className={styles.imgRepuestoCard} alt={repuesto?.repuesto}/>
-      <h2 className={styles.titleRepuesto}>{repuesto.repuesto}</h2>
+      <h4 className={styles.titleRepuesto}>{repuesto.repuesto}</h4>
       <p style={{fontSize:'14px',fontWeight:'500', color:'#5c5c5c'}}>{repuesto?.fabricante}</p>
 
       <div className={styles.containerFooterCard}>

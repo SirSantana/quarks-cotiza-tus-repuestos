@@ -1,6 +1,6 @@
 [
   {
-    "repuesto": "Instalación de Alta Chevrolet Corsa / Chevy / Cobalt",
+    "repuesto": "Cables de Bujia Chevrolet Corsa",
     "descripcion": "La instalación de alta mejora significativamente el rendimiento de tu Chevrolet Corsa, Chevy o Cobalt. Este kit incluye componentes de alta calidad que aumentan la potencia del motor, mejoran la eficiencia de combustible y proporcionan una experiencia de conducción más suave. ¡Dale a tu vehículo la potencia que se merece con esta instalación de alta calidad!",
     "precio": "95.000",
     "marcaAuto": "Chevrolet",
@@ -21,7 +21,9 @@
     "value":"Instalación de Alta Chevrolet Corsa / Chevy / Cobalt",
     "index":1,
     "label":"Instalación de Alta Chevrolet Corsa / Chevy / Cobalt",
-    "idUrl": 1
+    "idUrl": 1,
+    "etiquetas":["Cables bujia Corsa", "Cables bujia Corsa 1.4", "Cables bujia Corsa 1.6", "Precio Cables bujia Corsa", "Cables de bujia chevrolet corsa", "cable bujia corsa", "cables bujia corsa 1.4", "cable bujia corsa 1.6", "cable de bujias para corsa"]
+
   },
   {
     "repuesto": "Pastillas de freno Chevrolet Corsa 96-99 / Corsa Diesel",
@@ -107,7 +109,8 @@
     "tipo": "Frenos",
     "repuestoTipo": "Bomba Freno",
     "ventas": 0,
-    "idUrl": 5
+    "idUrl": 5,
+    "etiquetas":["Bomba de Freno Chevrolet Corsa Evolution", "Bomba de Freno Corsa Evolution", "Bomba de Freno Chevrolet Corsa Evo", "Bomba Freno Chevrolet Corsa Evolution","Bomba Freno Corsa Evolution", "Cilindro maestro corsa evolution","Cilindro maestro Corsa Evolution", "Cilindro maestro", "bomba de freno"  ]
   },
   {
     "repuesto": "Bomba de Freno Chevrolet Corsa 2002-",
@@ -2078,5 +2081,50 @@
     "repuestoTipo": "Compensador",
     "ventas": 2,
     "idUrl": 97
+  },
+  {
+    "repuesto": "Cables de Bujia Chevrolet Chevy",
+    "descripcion": "La instalación de alta mejora significativamente el rendimiento de tu Chevrolet Chevy. Este kit incluye componentes de alta calidad que aumentan la potencia del motor, mejoran la eficiencia de combustible y proporcionan una experiencia de conducción más suave. ¡Dale a tu vehículo la potencia que se merece con esta instalación de alta calidad!",
+    "precio": "95.000",
+    "marcaAuto": "Chevrolet",
+    "modelosAutos": ["Corsa", "Chevy", "Cobalt"],
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_915492-MCO71876577177_092023-F.webp",
+    "stock": ["3", "7"],
+    "fabricante": "a&g",
+    "calidad": "Homologado",
+    "garantiaMeses": 1,
+    "añoAuto": "",
+    "cilindraje": ["1300", "1400", "1600"],
+    "ubicacion": "Sección 2, Pasillo 3, Estante 5",
+    "costo": "75.000",
+    "descuento": 0,
+    "tipo": "Electricos",
+    "repuestoTipo": "Cables Bujias",
+    "ventas": 3,
+    "idUrl": 98,
+    "etiquetas":["Cables bujia Chevy", "Cables bujia Chevy 1.4", "Cables bujia Chevy 1.6", "Precio Cables bujia Chevy", "Cables de bujia chevrolet Chevy", "cable bujia Chevy", "cables bujia Chevy 1.4", "cable bujia Chevy 1.6", "cable de bujias para Chevy"]
+
+  },
+  {
+    "repuesto": "Cables de Bujia Chevrolet Cobalt",
+    "descripcion": "La instalación de alta mejora significativamente el rendimiento de tu Chevrolet Chevy. Este kit incluye componentes de alta calidad que aumentan la potencia del motor, mejoran la eficiencia de combustible y proporcionan una experiencia de conducción más suave. ¡Dale a tu vehículo la potencia que se merece con esta instalación de alta calidad!",
+    "precio": "95.000",
+    "marcaAuto": "Chevrolet",
+    "modelosAutos": ["Corsa", "Chevy", "Cobalt"],
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_915492-MCO71876577177_092023-F.webp",
+    "stock": ["3", "7"],
+    "fabricante": "a&g",
+    "calidad": "Homologado",
+    "garantiaMeses": 1,
+    "añoAuto": "",
+    "cilindraje": ["1300", "1400", "1600"],
+    "ubicacion": "Sección 2, Pasillo 3, Estante 5",
+    "costo": "75.000",
+    "descuento": 0,
+    "tipo": "Electricos",
+    "repuestoTipo": "Cables Bujias",
+    "ventas": 3,
+    "idUrl": 99,
+    "etiquetas":["Cables bujia Cobalt","Precio Cables bujia Cobalt", "Cables de bujia chevrolet Cobalt", "cable bujia Cobalt", "cable de bujias para Cobalt"]
   }
 ]

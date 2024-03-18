@@ -40,10 +40,10 @@ export default function Repuesto({ data }) {
     stock: data?.stock,
     image: data?.imagen,
     url: "https://cotizatusrepuestos.com" + router.asPath,
-    marca:data?.fabricante
+    marca: data?.fabricante
   }
   return (
-    <Layout title={data?.repuesto + " " + data?.fabricante} marca={data?.fabricante} description={description} price={precioConDescuento?.toLocaleString()} image={data?.imagen} icon={data?.imagen} url={router?.asPath} productoMarcado={productoMarcado} >
+    <Layout title={data?.repuesto} marca={data?.fabricante} description={description} price={precioConDescuento?.toLocaleString()} image={data?.imagen} icon={data?.imagen} url={router?.asPath} productoMarcado={productoMarcado} >
 
       <div className={styles.container2}>
         <p onClick={() => router?.back()} className={styles.textReturn} > Regresar | Repuestos &gt; {data?.marcaAuto} &gt; {data?.tipo} &gt; {data?.repuestoTipo} </p>
@@ -54,7 +54,7 @@ export default function Repuesto({ data }) {
             <div style={{ width: '100%', margin: '16px 0', backgroundColor: '#d9d9d9', height: '1px' }} />
 
             <div className={styles.repSugeridos}  >
-              <h2 className={styles.titleNombre}>Otros repuestos</h2>
+              <h4 className={styles.titleNombre}>Otros repuestos</h4>
               <div style={{ display: 'flex', flexDirection: 'row', gap: '16px', justifyContent: 'space-between', width: '100%', }}>
                 {repuestos?.slice(0, 2).map(repuesto => (
                   <CardRepuesto key={repuesto.repuesto} repuesto={repuesto} />
@@ -64,17 +64,17 @@ export default function Repuesto({ data }) {
             </div>
           </div>
           <div className={styles.cardDetalleRepuesto}>
-            <p style={{ fontSize: '12px', color: '#5C5C5C', margin: 0 }}>Nuevo | {data?.ventas>0 && "+" + data?.ventas + " vendidos"}</p>
+            <p style={{ fontSize: '12px', color: '#5C5C5C', margin: 0 }}>Nuevo | {data?.ventas > 0 && "+" + data?.ventas + " vendidos"}</p>
             <h1 className={styles.titleNombre}>{data?.repuesto}</h1>
             <div>
-              {data?.descuento > 0 && <p style={{ fontSize: '16px',color:'#f50057',lineHeight:'10px', textDecoration: 'line-through' }}>Antes ${data?.precio}</p>}
+              {data?.descuento > 0 && <p style={{ fontSize: '16px', color: '#f50057', lineHeight: '10px', textDecoration: 'line-through' }}>Antes ${data?.precio}</p>}
               <h2 style={{ alignItems: 'center', display: 'flex' }} className={styles.textPricePrincipal}>${precioConDescuento?.toLocaleString()}{data?.descuento > 0 && <b style={{ fontSize: '14px', color: 'green', fontWeight: '500', marginLeft: '8px' }}>{data?.descuento}% OFF</b>}</h2>
             </div>
             <img src={data?.imagen} className={styles.imgPrincipalRepuestoMobile} alt={data?.repuesto} />
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '24px' }}>
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
-                <h3 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px',}} name="car-sport-outline"></ion-icon>Vehiculo:</h3>
+                <h3 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px', }} name="car-sport-outline"></ion-icon>Vehiculo:</h3>
                 <p style={{ fontSize: '14px', }}>{data?.marcaAuto}</p>
               </div>
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
@@ -98,19 +98,19 @@ export default function Repuesto({ data }) {
             <div style={{ width: '100%', margin: '16px 0', backgroundColor: '#d9d9d9', height: '1px' }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '8px' }}>
               <h3 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}><ion-icon style={{ fontSize: '20px' }} name="reader-outline"></ion-icon>Descripcion:</h3>
-              <p style={{ fontSize: '14px',color:'#5c5c5c', lineHeight:'22px'}}>{data?.descripcion}</p>
+              <p style={{ fontSize: '14px', color: '#5c5c5c', lineHeight: '22px' }}>{data?.descripcion}</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
               <h3 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Aplicaciones:</h3>
-              <p style={{ fontSize: '14px', color:'#5c5c5c'}}>{data?.modelosAutos?.map(el => el + " • ")}</p>
+              <p style={{ fontSize: '14px', color: '#5c5c5c' }}>{data?.modelosAutos?.map(el => el + " • ")}</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
               <h3 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Cilindrajes:</h3>
-              <p style={{ fontSize: '14px',color:'#5c5c5c' }}>{data?.cilindraje?.map(el => el + " - ")}</p>
+              <p style={{ fontSize: '14px', color: '#5c5c5c' }}>{data?.cilindraje?.map(el => el + " - ")}</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '16px' }}>
               <h3 style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '600' }}>Categoria repuesto:</h3>
-              <p style={{ fontSize: '14px',color:'#5c5c5c' }}>{data?.tipo}</p>
+              <p style={{ fontSize: '14px', color: '#5c5c5c' }}>{data?.tipo}</p>
             </div>
             <div style={{ width: '100%', margin: '16px 0', backgroundColor: '#d9d9d9', height: '1px' }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -141,7 +141,7 @@ export default function Repuesto({ data }) {
             <div className={styles.repSugeridosMobile} >
               <div style={{ width: '100%', margin: '16px 0', backgroundColor: '#d9d9d9', height: '1px' }} />
 
-              <h2 className={styles.titleNombre}>Otros repuestos</h2>
+              <h4 className={styles.titleNombre}>Otros repuestos</h4>
               <div style={{ display: 'flex', flexDirection: 'row', gap: '16px', justifyContent: 'space-between', width: '100%', }}>
                 {repuestos?.slice(0, 2).map(repuesto => (
                   <CardRepuesto key={repuesto?.repuesto} repuesto={repuesto} />
@@ -150,10 +150,19 @@ export default function Repuesto({ data }) {
 
             </div>
           </div>
-
-
         </div>
-
+        {data?.etiquetas?.length > 0 &&
+          <div style={{ margin: '32px 0', width: '100%', }}>
+            <h4>Etiquetas</h4>
+            <div style={{ display: 'flex', marginTop: '16px', flexDirection: 'row', gap: '8px', flexWrap: 'wrap' }}>
+              {data?.etiquetas?.map(el => (
+                <div style={{ border: '1px solid #c5c5c5', borderRadius: '12px', padding: '4px 8px', backgroundColor: '#EDEDED' }}>
+                  <h2 style={{ fontSize: '12px', fontWeight: '500' }}>{el}</h2>
+                </div>
+              ))}
+            </div>
+          </div>
+        }
       </div>
     </Layout>
   )
