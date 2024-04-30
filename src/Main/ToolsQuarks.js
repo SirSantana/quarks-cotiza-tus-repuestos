@@ -22,6 +22,9 @@ export default function ToolsQuarks() {
         <h4 style={{ fontSize: '48px', }}>6.82 <b style={{ fontSize: '18px', fontWeight: '400' }}>/ gl</b></h4>
         <p style={{ color: 'white', fontSize: '14px', textAlign: 'end', alignSelf: 'flex-end' }}>Calcula el consumo de combustible</p>
       </Link>
+      <Link  target="_blank" rel="noopener noreferrer" href={'https://www.quarks.com.co/gasolineras'} style={{ textDecoration: 'none', color: 'white', width: '280px', borderRadius: '10px', padding: '16px', margin: '32px 0', backgroundColor: '#f50057', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }} >
+        <h4 style={{ fontSize: '48px', }}>Gasolineras en Bogota</h4>
+      </Link>
     </div>
   )
 }
