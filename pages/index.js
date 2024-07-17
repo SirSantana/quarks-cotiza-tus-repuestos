@@ -9,12 +9,14 @@ import SectionPasos from '@/src/Main/Section4'
 import CallToActionFooter from '@/src/Main/CallToActionFooter'
 import ProductosHome from '@/src/Main/ProductosHome'
 import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
 
 const ToolsQuarks = dynamic(() => import('@/src/Main/ToolsQuarks'),
   { ssr: false })
 
 export default function Home() {
   let description = '¡Encuentra los repuestos Chevrolet que necesitas en Colombia! Cotiza tus piezas y accesorios para vehículos Chevrolet de manera rápida, segura y sencilla Obtén las mejores ofertas en repuestos originales y homologaso con envios gratis y pago contraentrega para tu Chevrolet. Simplifica tu búsqueda y ahorra tiempo y dinero. ¡Cotiza hoy mismo en línea!'
+  
   return (
     <>
       <Head>

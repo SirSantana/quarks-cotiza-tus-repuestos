@@ -19,6 +19,11 @@ export default function Footer() {
           <div className={styles.containerText}>
             <h3 className={styles.title2}>Acerca de Nosotros</h3>
             <Link style={{ textDecoration: 'none' }} href={'/quienessomos'} ><p className={styles.subtitle}>¿Quienes somos?</p></Link>
+            <Link style={{ textDecoration: 'none' }} href='https://www.quarks.com.co/pico-y-placa-hoy/bogota' ><p className={styles.subtitle}>Pico y Placa Bogota</p></Link>
+            <Link style={{ textDecoration: 'none' }} href='https://www.quarks.com.co/pico-y-placa-hoy/medellin' ><p className={styles.subtitle}>Pico y Placa Medellín</p></Link>
+            <Link style={{ textDecoration: 'none' }} href='https://www.quarks.com.co/pico-y-placa-hoy/bucaramanga' ><p className={styles.subtitle}>Pico y Placa Bucaramanga</p></Link>
+          
+          
           </div>
           <div className={styles.containerText}>
             <h3 className={styles.title2}>Legal</h3>
